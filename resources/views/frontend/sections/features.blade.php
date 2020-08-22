@@ -16,19 +16,19 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                    <img src="img/bg-img/2.jpg" alt="">
+                    <img src="assets/img/bg-img/2.jpg" alt="">
                     <h5>We take care of you</h5>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                    <img src="img/bg-img/3.jpg" alt="">
+                    <img src="assets/img/bg-img/3.jpg" alt="">
                     <h5>No documents needed</h5>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="700ms">
-                    <img src="img/bg-img/4.jpg" alt="">
+                    <img src="assets/img/bg-img/4.jpg" alt="">
                     <h5>Fast &amp; easy loans</h5>
                 </div>
             </div>

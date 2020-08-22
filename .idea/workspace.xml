@@ -10,104 +10,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98e167f4-d96d-475a-8161-61bf25f553d8" name="Default Changelist" comment="First">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/classy-nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/credit-icon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/classy.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/classy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/classy.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/classy.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/elements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/services.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/html/single-post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/23.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/24.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/26.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/32.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/33.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/bg-img/add2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/calendar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/call.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/call2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/location.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/message.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/message2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/pencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/core-img/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/active.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/bootstrap/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/bootstrap/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/jquery/jquery-2.2.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/plugins/plugins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/page/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/action.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/actionbutton.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/breadcrumb.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/getintouch.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/services.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/slider.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/subscribe.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/static/loader.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/static/menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/static/scrtipts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="98e167f4-d96d-475a-8161-61bf25f553d8" name="Default Changelist" comment="two">
+      <change afterPath="$PROJECT_DIR$/app/Models/Sliders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/voyager.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/voyager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/slider.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -236,7 +149,6 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
-      <path value="$PROJECT_DIR$/vendor/tcg/voyager" />
       <path value="$PROJECT_DIR$/vendor/arrilot/laravel-widgets" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
@@ -250,6 +162,7 @@
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/waavi/translation" />
+      <path value="$PROJECT_DIR$/vendor/tcg/voyager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gJBWJdAWZ75GNn0zNaTXerA97X" />
@@ -265,11 +178,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Blade" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/pages/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\dcs\app\Http\Controllers" />
       <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -295,7 +209,10 @@
       <workItem from="1597949694066" duration="43000" />
       <workItem from="1597949761924" duration="213000" />
       <workItem from="1597950003212" duration="109000" />
-      <workItem from="1598027257553" duration="21858000" />
+      <workItem from="1598027257553" duration="22294000" />
+      <workItem from="1598073850063" duration="20239000" />
+      <workItem from="1598110219279" duration="3236000" />
+      <workItem from="1598115105332" duration="10755000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1597950064640</created>
@@ -304,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597950064640</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="two">
+      <created>1598050530159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598050530159</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,9 +249,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First" />
-    <option name="LAST_COMMIT_MESSAGE" value="First" />
+    <MESSAGE value="two" />
+    <option name="LAST_COMMIT_MESSAGE" value="two" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598100067564">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598100067564" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598042568398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -336,18 +265,24 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="472" y="381" key="NewPhpFileDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598042344879" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597950072074">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598050546774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1597950072074" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598050546774" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598042570339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598042570339" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598033070131">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1598083070043">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598083070043" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598079841963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598033070131" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598079841963" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -355,13 +290,7 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/assets/html/index.html</url>
           <line>699</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="NONE" type="php">
-          <url>file://$PROJECT_DIR$/vendor/tcg/voyager/resources/views/menus/builder.blade.php</url>
-          <line>84</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,24 +2,31 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use App\Models\Sliders;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use TCG\Voyager\Models\Page;
 
 class PageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('frontend.pages.main.index');
+        //Set locale
+        App::setLocale(explode("/", $request->getRequestUri())[1]);
+
+        //Get slider with local language
+        $slides = Sliders::all()->translate('locale', App::getLocale());
+
+        return view('frontend.pages.main.index', compact('slides'));
     }
 
     public function getPage($slug)
     {
-        // Loads current locale translations
-        $locale = App::getLocale();
-        $page = Page::withTranslation($locale)->where('slug', $slug)->first();
-        $page = $page->translate($locale);
+        //get page content with local language
+        $page = Page::where('slug', $slug)
+                    ->first()
+                    ->translate('locale', App::getLocale());
 
-        return view('frontend.pages.page.index',['page' => $page]);
+        return view('frontend.pages.page.index', compact('page'));
     }
 }
