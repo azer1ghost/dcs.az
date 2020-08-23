@@ -7,17 +7,15 @@
                     <!-- Section Heading -->
                     <div class="section-heading">
                         <div class="line"></div>
-                        <p>Take look at our</p>
-                        <h2>About our company</h2>
+                        <p>{{$page['excerpt']}}</p>
+                        <h2>{{$page['title']}}</h2>
                     </div>
-                    <h6 class="mb-4">In vitae nisi aliquam, scelerisque leo a, volutpat sem. Viva mus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. </h6>
-                    <p class="mb-0">Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem. Duis non volutpat arcu. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem. Duis non volutpat arcu. Pellentesque lobortis neque non sem dapibus, non rutrum dolor pretium.</p>
-                    <a href="#" class="btn credit-btn mt-50">Discover</a>
+                    {!! $page['body'] !!}
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="about-thumbnail mb-100">
-                    <img src="{{asset('assets/img/bg-img/14.jpg')}}" alt="">
+                    <img class="popup-link" href="{{asset('storage').'/'.$page['image']}}" src="{{asset('storage').'/'.$page['image']}}" alt="{{$page['title']}}" >
                 </div>
             </div>
         </div>

@@ -10,17 +10,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98e167f4-d96d-475a-8161-61bf25f553d8" name="Default Changelist" comment="two">
-      <change afterPath="$PROJECT_DIR$/app/Models/Sliders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/json.js" afterDir="false" />
+    <list default="true" id="98e167f4-d96d-475a-8161-61bf25f553d8" name="Default Changelist" comment="Ready for production">
+      <change afterPath="$PROJECT_DIR$/app/Helpers/StaticText.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/social.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/usefullinks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Ourservice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Social.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Statictext.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Usefullink.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Works.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/helpers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/magnific-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dcs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dcs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/voyager.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/voyager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/page/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/services.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +181,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/waavi/translation" />
       <path value="$PROJECT_DIR$/vendor/tcg/voyager" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/browner12/helpers" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gJBWJdAWZ75GNn0zNaTXerA97X" />
@@ -182,13 +202,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\dcs\app\Models" />
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\static" />
+      <recent name="C:\laragon\www\dcs\public\assets\html" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\dcs\app\Http\Controllers" />
       <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\page" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\dcs\resources\views\frontend\static" />
-      <recent name="C:\laragon\www\dcs\public\assets\html" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,7 +233,9 @@
       <workItem from="1598027257553" duration="22294000" />
       <workItem from="1598073850063" duration="20239000" />
       <workItem from="1598110219279" duration="3236000" />
-      <workItem from="1598115105332" duration="10755000" />
+      <workItem from="1598115105332" duration="11073000" />
+      <workItem from="1598163083906" duration="18168000" />
+      <workItem from="1598203398025" duration="6586000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1597950064640</created>
@@ -228,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598050530159</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Slider">
+      <created>1598128716715</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598128716715</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,12 +280,15 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First" />
     <MESSAGE value="two" />
-    <option name="LAST_COMMIT_MESSAGE" value="two" />
+    <MESSAGE value="Slider" />
+    <MESSAGE value="Ready for production" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready for production" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598100067564">
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598208201209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598208201209" />
     <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598100067564" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598042568398">
       <screen x="0" y="0" width="1366" height="728" />
@@ -265,10 +298,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="472" y="381" key="NewPhpFileDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598042344879" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598050546774">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598128742603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1597950072074" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598128742603" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598050546774" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598042570339">
       <screen x="0" y="0" width="1366" height="728" />

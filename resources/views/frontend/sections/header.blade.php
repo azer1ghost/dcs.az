@@ -12,14 +12,21 @@
 
                     <!-- Top Contact Info -->
                     <div class="top-contact-info d-flex align-items-center">
-                        <a target="_blank" href="{{setting('site.googlemap')}}" >
-                            <img src="{{asset("assets/img/core-img/placeholder.png")}}" alt="">
-                            <span>{{setting('site.adress')}}</span>
-                        </a>
-                        <a href="mailto:{{setting('site.email')}}" >
-                            <img src="{{asset("assets/img/core-img/message.png")}}" alt="">
-                            <span>{{setting('site.email')}}</span>
-                        </a>
+
+                        @if(setting('site.googlemap'))
+                            <a target="_blank" href="{{setting('site.googlemap')}}" >
+                                <img src="{{asset("assets/img/core-img/placeholder.png")}}" alt="">
+                                <span>{{setting('site.adress')}}</span>
+                            </a>
+                        @endif
+
+                        @if(setting('site.email'))
+                            <a href="mailto:{{setting('site.email')}}" >
+                                <img src="{{asset("assets/img/core-img/message.png")}}" alt="">
+                                <span>{{setting('site.email')}}</span>
+                            </a>
+                        @endif
+
                     </div>
 
                     <!-- Select your language -->

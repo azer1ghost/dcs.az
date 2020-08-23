@@ -14,7 +14,6 @@
     @include('frontend.sections.services')
     @include('frontend.sections.footer')
 
-
 @endsection
 
 @section('scripts')

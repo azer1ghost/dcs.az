@@ -7,29 +7,29 @@
                     <!-- Section Heading -->
                     <div class="section-heading">
                         <div class="line"></div>
-                        <p>Take look at our</p>
-                        <h2>Our Loans</h2>
+                        <p>{{$feature['uptitile']}}</p>
+                        <h2>{{$feature['title']}}</h2>
                     </div>
-                    <h6>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Viva mus rutrum dui fermentum eros hendrerit.</h6>
-                    <a href="#" class="btn credit-btn mt-50">Discover</a>
+                    <h6>{{$feature['text']}}</h6>
+                    <a href="{{$feature['btn_url']}}" class="btn credit-btn mt-50">{{$feature['btn_text']}}</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                    <img src="assets/img/bg-img/2.jpg" alt="">
-                    <h5>We take care of you</h5>
+                    <img src="{{ asset('storage/'.$feature['img_1'])}}" alt="">
+                    <h5>{{$feature['img_title1']}}</h5>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                    <img src="assets/img/bg-img/3.jpg" alt="">
-                    <h5>No documents needed</h5>
+                    <img src="{{ asset('storage/'.$feature['img_2'])}}" alt="">
+                    <h5>{{$feature['img_title2']}}</h5>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="700ms">
-                    <img src="assets/img/bg-img/4.jpg" alt="">
-                    <h5>Fast &amp; easy loans</h5>
+                    <img src="{{ asset('storage/'.$feature['img_3'])}}" alt="">
+                    <h5>{{$feature['img_title3']}}</h5>
                 </div>
             </div>
         </div>
