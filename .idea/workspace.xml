@@ -11,34 +11,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98e167f4-d96d-475a-8161-61bf25f553d8" name="Default Changelist" comment="Ready for production">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/StaticText.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers/social.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers/usefullinks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Ourservice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Social.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Statictext.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Usefullink.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Works.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/magnific-popup/magnific-popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dcs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dcs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/Services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/lastNews.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dcs.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/blog/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/blog/post.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/under/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/counter.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/postcontent.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/sections/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/voyager.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/voyager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/main/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/page/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/breadcrumb.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/breadcrumb.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/features.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/services.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/getintouch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/getintouch.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/subscribe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/subscribe.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/json.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +57,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/azer1ghost/dcs.az" />
+      </set>
+    </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -185,6 +190,9 @@
       <path value="$PROJECT_DIR$/vendor/browner12/helpers" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="sortByName" value="true" />
+  </component>
   <component name="ProjectId" id="1gJBWJdAWZ75GNn0zNaTXerA97X" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -195,21 +203,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Blade" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/pages/blog" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\blog" />
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\main" />
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\under" />
+      <recent name="C:\laragon\www\dcs\app\Http\Controllers" />
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\page" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\under" />
       <recent name="C:\laragon\www\dcs\app\Models" />
       <recent name="C:\laragon\www\dcs\resources\views\frontend\static" />
       <recent name="C:\laragon\www\dcs\public\assets\html" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\dcs\app\Http\Controllers" />
-      <recent name="C:\laragon\www\dcs\resources\views\frontend\pages\page" />
     </key>
   </component>
   <component name="RunManager">
@@ -235,7 +250,21 @@
       <workItem from="1598110219279" duration="3236000" />
       <workItem from="1598115105332" duration="11073000" />
       <workItem from="1598163083906" duration="18168000" />
-      <workItem from="1598203398025" duration="6586000" />
+      <workItem from="1598203398025" duration="6862000" />
+      <workItem from="1598260538921" duration="4000" />
+      <workItem from="1598273022383" duration="1816000" />
+      <workItem from="1598470362865" duration="1939000" />
+      <workItem from="1598527297804" duration="5000" />
+      <workItem from="1598530288285" duration="39000" />
+      <workItem from="1598688456513" duration="912000" />
+      <workItem from="1598716841899" duration="9000" />
+      <workItem from="1598717704748" duration="600000" />
+      <workItem from="1598720132424" duration="90000" />
+      <workItem from="1599391912732" duration="1572000" />
+      <workItem from="1599393596753" duration="8712000" />
+      <workItem from="1599469845906" duration="13392000" />
+      <workItem from="1599484920598" duration="6000" />
+      <workItem from="1599545630461" duration="4857000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1597950064640</created>
@@ -258,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598128716715</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ready for production">
+      <created>1598211386923</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598211386923</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,24 +321,31 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ready for production" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598208201209">
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599550303666">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1599393772561" />
     <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598208201209" />
-    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598100067564" />
+    <state x="733" y="98" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1599550303666" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598042568398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598042568398" />
-    <state x="472" y="381" key="NewPhpFileDialog" timestamp="1598042344879">
+    <state x="472" y="381" key="NewPhpFileDialog" timestamp="1599551371652">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="472" y="381" key="NewPhpFileDialog/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1599393042411" />
     <state x="472" y="381" key="NewPhpFileDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598042344879" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598128742603">
+    <state x="472" y="381" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599551371652" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598211406952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598128742603" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598211406952" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598050546774" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1598211605726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598211605726" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598042570339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -311,11 +354,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598083070043" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598079841963">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599550421785">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/-1366.1.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1598033070131" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598079841963" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599550421785" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

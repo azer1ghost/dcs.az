@@ -60,7 +60,7 @@
 
 
                 <?php $i = 0 ?>
-                @foreach($services as $service)
+                @foreach(getServices() as $service)
                    <?php $i++ ?>
                         <p>
                             <a style="color: #838383; font-size: 14px" href="{{$service['link']}}">{{$service['title']}}</a>

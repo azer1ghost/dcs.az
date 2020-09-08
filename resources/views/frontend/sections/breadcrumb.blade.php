@@ -1,5 +1,5 @@
 <!-- ##### Breadcrumb Area Start ##### -->
-<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({{asset("assets/img/bg-img/13.jpg")}});">
+<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({{asset('storage/'.$page['image'])}});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">

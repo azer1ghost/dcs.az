@@ -11,7 +11,9 @@
     @include('frontend.sections.header')
     @include('frontend.sections.slider')
     @include('frontend.sections.features')
+    @include('frontend.sections.counter')
     @include('frontend.sections.services')
+    @include('frontend.sections.getintouch')
     @include('frontend.sections.footer')
 
 @endsection

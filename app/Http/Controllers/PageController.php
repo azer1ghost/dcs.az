@@ -14,20 +14,24 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        //Set locale
-        App::setLocale(explode("/", $request->getRequestUri())[1]);
+        if(setting('site.under')){
+            return view('frontend.pages.under.index');
+        }else{
+            //Set locale
+            App::setLocale(explode("/", $request->getRequestUri())[1]);
 
-        //Get slider with local language
-        $slides = Sliders::all()->sortBy('order')->translate('locale', App::getLocale());
+            //Get slider with local language
+            $slides = Sliders::all()->sortBy('order')->translate('locale', App::getLocale());
 
-        //Get services with local language
-        $services = Ourservice::all()->sortBy('order')->translate('locale', App::getLocale());
+            //Get services with local language
+            $services = Ourservice::all()->sortBy('order')->translate('locale', App::getLocale());
 
-        //Get works with local language
-        $feature = Works::all()->first()->translate('locale', App::getLocale());
+            //Get works with local language
+            $feature = Works::all()->first()->translate('locale', App::getLocale());
 
-        //Return home page
-        return view('frontend.pages.main.index', compact(['slides','services','feature']));
+            //Return home page
+            return view('frontend.pages.main.index', compact(['slides','services','feature']));
+        }
     }
 
     public function getPage($slug)

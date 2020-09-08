@@ -13,6 +13,10 @@
   margin: 0;
   padding: 0; }
 
+.logo{
+    max-width: 140px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px; }
