@@ -57,22 +57,5 @@
             @endif
         </li>
     @endforeach
-
 </ul>
 
-
-{{--<ul>--}}
-{{--    <li><a href="index.html">Home</a></li>--}}
-{{--    <li><a href="about.html">About Us</a></li>--}}
-{{--    <li><a href="#">Pages</a>--}}
-{{--        <ul class="dropdown">--}}
-{{--            <li><a href="index.html">Home</a></li>--}}
-{{--            <li><a href="about.html">About Us</a></li>--}}
-{{--            <li><a href="services.html">Services</a></li>--}}
-{{--            <li><a href="post.html">Post</a></li>--}}
-{{--            <li><a href="single-post.html">Single Post</a></li>--}}
-{{--            <li><a href="contact.html">Contact</a></li>--}}
-{{--            <li><a href="elements.html">Elements</a></li>--}}
-{{--        </ul>--}}
-{{--    </li>--}}
-{{--</ul>--}}

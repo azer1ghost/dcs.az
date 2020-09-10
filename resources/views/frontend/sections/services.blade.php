@@ -13,7 +13,7 @@
         </div>
 
         <div class="row">
-            @foreach($services as $service)
+            @foreach(getServices(9) as $service)
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">

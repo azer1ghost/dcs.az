@@ -8,3 +8,5 @@
 <script src="{{ asset('assets/js/plugins/plugins.js') }}"></script>
 <!-- Active js -->
 <script src="{{ asset('assets/js/active.js') }}"></script>
+<!-- Notify js -->
+<script src="{{ asset('assets/js/notify.min.js') }}"></script>

@@ -7,7 +7,7 @@
                 <div class="col-12 d-flex justify-content-between">
                     <!-- Logo Area -->
                     <div class="logo">
-                        <a href="{{route('Homepage')}}"><img src="{{ asset("storage")."/".setting('site.logo') }}" alt="Logo"></a>
+                        <a href="{{route('Homepage')}}"><img style="max-width: 120px" src="{{ asset("storage")."/".setting('site.logo') }}" alt="Logo"></a>
                     </div>
 
                     <!-- Top Contact Info -->

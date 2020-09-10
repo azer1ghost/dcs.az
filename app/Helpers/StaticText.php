@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\App;
 
 if (!function_exists('statictext')) {
 
-    function statictext($page, $key) :string
+    function statictext($page, $key, $lang = null) :string
     {
-
-        $statics = Statictext::where('group', $page)->get()->translate('locale', App::getLocale());
+        $lang ? $lang = $lang : $lang = App::getLocale();
+        $statics = Statictext::where('group', $page)->get()->translate('locale', $lang);
 
         //Create empty array for static texts
         $static = array();

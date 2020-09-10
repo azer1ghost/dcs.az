@@ -65,6 +65,7 @@
 @section('scripts')
     <script src="{{asset('assets/magnific-popup/jquery.magnific-popup.js')}}"></script>
     <script>
+        //Image opener
         $(document).ready(function() {
             $('.popup-link').magnificPopup({
                 type: 'image',
@@ -73,13 +74,47 @@
             });
         });
 
-        $main = $('.classynav ul li:first-child a span').html()
-        $('#mainpagelink').text($main)
-    </script>
-    <script>
+        //set mainpage link
+        $('#mainpagelink').text($('.classynav ul li:first-child a span').html())
+
+        //search form
         $( "#search" ).submit(function(e){
             window.location.href = "{{route('Search')}}" + "/" +$('#search_input').val();
             e.preventDefault();
+        });
+
+        //subscribe
+        $( "#subscribeForm" ).submit(function( event ) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "{{route('Subscribe')}}",
+                data: $(this).serialize(), // serializes the form's elements.
+
+                success: function(data) {
+                    if (data['status']){
+
+                        $.message({
+                            type: "success",
+                            text: data['message'] + " {{statictext('subscribe','subscribed')}}",
+                            positon: "bottom-center",
+                            duration: 5000
+                        });
+
+                    } else {
+
+                        $.message({
+                            type: "error",
+                            text: "{{statictext('subscribe','error')}}",
+                            positon: "bottom-center",
+                            duration: 5000
+                        });
+
+                    }
+
+                },
+
+            });
         });
     </script>
 @endsection
