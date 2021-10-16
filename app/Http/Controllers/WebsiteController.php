@@ -55,4 +55,9 @@ class WebsiteController extends Controller
     {
         return view('website.pages.page', compact('page'));
     }
+
+    public function profile(): string
+    {
+        return 'profile';
+    }
 }
