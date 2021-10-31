@@ -9,8 +9,11 @@
         <x-bread-crumb-link :link="route('homepage')">
             Homepage
         </x-bread-crumb-link>
+        <x-bread-crumb-link :link="route('trainings')">
+            Trainings
+        </x-bread-crumb-link>
         <x-bread-crumb-link is-current="1">
-            {{statictext('homepage','services.title')}}
+            {{$training->getTranslatedAttribute('name')}}
         </x-bread-crumb-link>
     </x-bread-crumb>
 
@@ -35,19 +38,20 @@
                             </div>
                             <div class="col-md-8">
                                 <p>{{$training->date}}</p>
-{{--                                @auth--}}
-{{--                                    @if(!checkTrainingUser($training->id))--}}
-{{--                                        <a href="{{route('Join', $training->id)}}">--}}
-{{--                                            <button class="btn btn-primary">{{statictext('global','join')}}</button>--}}
-{{--                                        </a>--}}
-{{--                                    @else--}}
-{{--                                        <button disabled class="btn btn-primary">{{statictext('global','joined')}}</button>--}}
-{{--                                    @endif--}}
-{{--                                @else--}}
-{{--                                    <a href="{{route('Join', $training->id)}}">--}}
-{{--                                        <button class="btn btn-primary">{{statictext('global','join')}}</button>--}}
-{{--                                    </a>--}}
-{{--                                @endauth--}}
+                                @auth
+                                    @if(!auth()->user()->trainings->contains($training))
+                                        <a href="{{route('trainingSubscribe', $training)}}">
+                                            <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
+                                        </a>
+                                    @else
+                                        <button disabled class="btn btn-primary">{{statictext('global', 'joined')}}</button>
+                                    @endif
+                                @endauth
+                                @guest
+                                    <a href="{{route('trainingSubscribe', $training)}}">
+                                        <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
+                                    </a>
+                                @endguest
                             </div>
 
                             <div class="col-md-8">

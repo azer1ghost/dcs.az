@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -19,6 +21,9 @@ class User extends \TCG\Voyager\Models\User
      */
     protected $fillable = [
         'name',
+        'surname',
+        'number',
+        'profession',
         'email',
         'password',
     ];
@@ -42,8 +47,48 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
+    protected $with = [
+        'trainings'
+    ];
+
     public function getFullnameAttribute(): string
     {
         return "{$this->getAttribute('name')} {$this->getAttribute('surname')}";
     }
+
+    public function trainings(): BelongsToMany
+    {
+        return $this->belongsToMany(Training::class)->withTimestamps();
+    }
+
+    public function certificates(): HasMany
+    {
+        return $this->hasMany(Certificate::class);
+    }
+
+    public function setNumberAttribute($value): ?string
+    {
+        return $this->attributes['number'] = phone_cleaner($value);
+    }
+
+    public function getNumberAttribute($value): ?string
+    {
+        return phone_formatter($value, true);
+    }
+
+    public function getProtectedNumberAttribute(): ?string
+    {
+        return str_pad(substr($this->getAttribute('number'), -4), strlen($this->getAttribute('number')), '*', STR_PAD_LEFT);
+    }
+
+    public function setNameAttribute($value): ?string
+    {
+        return $this->attributes['name'] = ucfirst(strtolower($value));
+    }
+
+    public function setSurnameAttribute($value): ?string
+    {
+        return $this->attributes['surname'] = ucfirst(strtolower($value));
+    }
+
 }

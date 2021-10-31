@@ -6,7 +6,6 @@
 @import url(css/classy-nav.css);
 @import url(css/owl.carousel.min.css);
 @import url(css/animate.css);
-@import url(css/font-awesome.min.css);
 @import url(css/credit-icon.css);
 /* :: 3.0 Base CSS */
 * {
@@ -520,13 +519,13 @@ img {
 /* :: 4.0 Header Area CSS */
 .header-area {
     position: relative;
-    z-index: 1000;
+    z-index: 3;
     width: 100%;
 }
 
 .header-area .top-header-area {
     position: relative;
-    z-index: 1000;
+
     width: 100%;
     height: 80px;
     background-color: #f2f4f6;

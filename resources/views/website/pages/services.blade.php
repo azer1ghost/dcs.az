@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-12">
                     <div class="about-content mb-100">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-12 col-lg-4 mb-5">
                                 <div class="list-group" id="list-tab" role="tablist">
                                     @foreach($services as $service)
                                         <a class="list-group-item list-group-item-action @if($loop->first) active @endif"
@@ -40,7 +40,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-12 col-lg-8">
                                 <div class="tab-content" id="nav-tabContent">
                                     @foreach($services as $service)
                                         <div class="tab-pane fade  @if($loop->first) show active @endif"

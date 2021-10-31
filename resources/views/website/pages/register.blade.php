@@ -58,7 +58,7 @@
             </div>
 
             <div class="col-12 col-md-3 ">
-                <button type="submit" class="btn btn-outline-info form-control">{{statictext('register','reg.btn')}}</button>
+                <button type="submit" class="btn btn-outline-info form-control">{{statictext('register', 'reg.btn')}}</button>
             </div>
         </form>
     </div>
