@@ -69,11 +69,9 @@
                     <!-- Nav -->
                     <nav>
                         <ul>
-                            <li><a href="#">Homepage</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services &amp; Offers</a></li>
-                            <li><a href="#">Portfolio Presentation</a></li>
-                            <li><a href="#">The News</a></li>
+                            @foreach(menu('site', '_json') as $menu)
+                            <li><a href="{{$menu->link()}}">{{$menu->getTranslatedAttribute('title')}}</a></li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>

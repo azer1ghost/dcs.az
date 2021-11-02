@@ -30,4 +30,4 @@ Route::group(['prefix' => 'admin'], function () {
     (new Voyager())->routes();
 });
 
-Route::get('/{page}', [WebsiteController::class, 'page'])->name('page');
+Route::get('/{page:slug}', [WebsiteController::class, 'page'])->name('page');
