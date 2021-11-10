@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubscriberRequest;
 use App\Http\Requests\UpdateProfile;
 use App\Models\Post;
 use App\Models\Service;
+use App\Models\Subscriber;
 use App\Models\Training;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -71,6 +73,18 @@ class WebsiteController extends Controller
     public function page(Page $page)
     {
         return view('website.pages.page', compact('page'));
+    }
+
+    public function subscribe(SubscriberRequest $request): RedirectResponse
+    {
+        Subscriber::create($request->validated());
+        return back()->with('success');
+    }
+
+    public function unsubscribe($token): RedirectResponse
+    {
+        Subscriber::where('token', $token)->findOrFail()->delete();
+        return back()->with('success');
     }
 
     public function profile()
