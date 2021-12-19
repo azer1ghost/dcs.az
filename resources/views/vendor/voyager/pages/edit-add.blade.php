@@ -58,13 +58,13 @@
                             @foreach($dataTypeRows as $row)
 
                                 @if(auth()->user()->role_id != 1)
-                                    @if($dataTypeContent->{$row->field} === "/display_none" ||  $dataTypeContent->{$row->field} === "<p>/display_none</p>" || $row->field === "status")
+                                    @if($dataTypeContent->{$row->field} === "/display_none" ||  $dataTypeContent->{$row->field} === "<p>/display_none</p>" || $row->field === "status" || in_array($row->field, $dataTypeContent->hideFields()))
 
                                         @if($row->field === "status")
                                             <input name="{{$row->field}}" value="ACTIVE" type="hidden">
                                         @endif
 
-                                        @if($dataTypeContent->{$row->field} === "/display_none" || $dataTypeContent->{$row->field} === "<p>/display_none</p>")
+                                        @if($dataTypeContent->{$row->field} === "/display_none" || $dataTypeContent->{$row->field} === "<p>/display_none</p>" || in_array($row->field, $dataTypeContent->hideFields()))
                                             <div style="display: none" >
                                         @else
                                             <div>

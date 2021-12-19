@@ -1,4 +1,4 @@
-@extends('website.layouts.main')
+@extends('website.layout')
 
 @section('title', "Login")
 

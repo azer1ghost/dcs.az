@@ -1,4 +1,4 @@
-@extends('website.layouts.main')
+@extends('website.layout')
 
 @section('title', $training->name)
 @section('description', $training->excerpt)

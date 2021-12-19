@@ -13,17 +13,16 @@ class Localization
     public function handle(Request $request, Closure $next)
     {
         if (session()->has('locale')) {
-            App::setlocale(session()->get('locale'));
+            $this->locale(session()->get('locale'));
+        } else {
+            $this->locale(config('voyager.multilingual.default'));
         }
         return $next($request);
     }
 
     public function locale(string $locale): RedirectResponse
     {
-        if (!in_array($locale, config('app.locales')))
-        {
-            abort(403);
-        }
+        abort_if(!in_array($locale, config('app.locales')), 403);
 
         App::setlocale($locale);
         session()->put('locale', $locale);

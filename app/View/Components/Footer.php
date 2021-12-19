@@ -10,9 +10,12 @@ class Footer extends Component
 
     public Collection $socials;
     public Collection $services;
+    public $meta;
+
     public function __construct()
     {
-        $this->socials = \App\Models\Social::active()->orderBy('order')->get();
+        $this->meta = meta('homepage');
+        $this->socials = \App\Models\Social::active()->orderBy('ordering')->get();
         $this->services = \App\Models\Service::active()->orderBy('order')->get();
     }
 

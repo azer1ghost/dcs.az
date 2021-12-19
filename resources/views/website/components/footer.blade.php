@@ -16,8 +16,8 @@
                 <div class="col-md-6 col-lg-7 text-center text-md-right">
 
                     @foreach($socials as $social)
-                        <a href="{{$social['link']}} ">
-                            <i class="{{$social['icon']}} white-text mr-4"> </i>
+                        <a href="{{$social->link}} ">
+                            <i class="fab fa-2x fa-{{$social->name}} white-text mr-4"> </i>
                         </a>
                     @endforeach
 
@@ -42,7 +42,7 @@
                     <h5 class="widget-title">{{setting('site.company_name')}}</h5>
                     <!-- Nav -->
                    <p>
-                       {{setting('site.description')}}
+                       {{$meta->get('meta_description')}}
                    </p>
                 </div>
             </div>

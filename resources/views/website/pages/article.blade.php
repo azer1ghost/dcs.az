@@ -1,4 +1,4 @@
-@extends('website.layouts.main')
+@extends('website.layout')
 
 @section('title', $post->getTranslatedAttribute('seo_title'))
 @section('description', $post->getTranslatedAttribute('meta_description'))

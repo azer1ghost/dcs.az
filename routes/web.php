@@ -6,8 +6,11 @@ use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Voyager;
 
-Route::get('/', [WebsiteController::class, 'homepage'])->name('homepage');
+Auth::routes();
+Localization::route();
 
+Route::redirect('/','home')->name('index');
+Route::get('/home', [WebsiteController::class, 'homepage'])->name('homepage');
 Route::get('/services', [WebsiteController::class, 'services'])->name('services');
 Route::get('/articles', [WebsiteController::class, 'articles'])->name('articles');
 Route::get('/article/{post:slug}', [WebsiteController::class, 'article'])->name('article');
@@ -24,11 +27,8 @@ Route::middleware( 'auth')->group(function () {
     Route::get('/trainings/{training:slug}/unsubscribe', [WebsiteController::class, 'trainingUnsubscribe'])->name('trainingUnsubscribe');
 });
 
-Auth::routes();
-Localization::route();
-
-Route::group(['prefix' => 'admin'], function () {
-    (new Voyager())->routes();
+Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
+    Voyager::routes();
 });
 
 Route::get('/{page:slug}', [WebsiteController::class, 'page'])->name('page');

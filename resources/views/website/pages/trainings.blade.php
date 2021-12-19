@@ -1,8 +1,13 @@
-@extends('website.layouts.main')
+@extends('website.layout')
+
+@section('title', $meta->get('title'))
+@section('description', $meta->get('meta_description'))
+@section('keywords', $meta->get('meta_keywords'))
+
 
 @section('content')
 
-    <x-bread-crumb :title="statictext('trainings', 'header')">
+    <x-bread-crumb :title="statictext('trainings', 'header')" :banner="$meta->get('banner')">
         <x-bread-crumb-link :link="route('homepage')">
             Homepage
         </x-bread-crumb-link>

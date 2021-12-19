@@ -16,17 +16,23 @@ class WebsiteController extends Controller
 {
     public function homepage()
     {
-        return view('website.pages.homepage');
+        $meta = meta('homepage');
+
+        return view('website.pages.homepage', compact('meta'));
     }
 
     public function trainings()
     {
+        $meta = meta('trainings', ['banner']);
+
         $trainings = Training::active()->orderBy('order')->paginate(5);
-        return view('website.pages.trainings', compact('trainings'));
+        return view('website.pages.trainings', compact('trainings', 'meta'));
     }
 
     public function training(Training $training)
     {
+        $meta = meta('trainings');
+
         return view('website.pages.training-detail', compact('training'));
     }
 
@@ -47,12 +53,14 @@ class WebsiteController extends Controller
 
     public function services()
     {
+        $meta = meta('services', ['banner']);
         $services = Service::active()->orderBy('order')->paginate(5);
-        return view('website.pages.services', compact('services'));
+        return view('website.pages.services', compact('services', 'meta'));
     }
 
     public function articles(Request $request)
     {
+        $meta = meta('articles', ['banner']);
         $category = $request->get('category');
         $search = $request->get('search');
 
@@ -62,7 +70,7 @@ class WebsiteController extends Controller
             ->latest()
             ->paginate(5);
 
-        return view('website.pages.articles', compact('posts'));
+        return view('website.pages.articles', compact('posts', 'meta'));
     }
 
     public function article(Post $post)
