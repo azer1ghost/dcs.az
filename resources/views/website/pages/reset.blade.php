@@ -26,7 +26,6 @@
                     </div>
                     <br>
                     <button type="submit" class="btn credit-btn form-control">Change</button>
-
                 </form>
             </div>
         </div>

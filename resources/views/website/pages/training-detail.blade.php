@@ -53,7 +53,6 @@
                                     </a>
                                 @endguest
                             </div>
-
                             <div class="col-md-8">
                                 {!! $training->getTranslatedAttribute('content') !!}
                             </div>

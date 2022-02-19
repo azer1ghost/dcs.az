@@ -19,7 +19,6 @@
 @endsection
 
 @section('content')
-
     <!-- ##### News Area Start ##### -->
     <section class="news-area section-padding-100">
         <div class="container">
@@ -47,10 +46,8 @@
                             </div>
                         @endforeach
                     </div>
-
-{{--                    {{ $posts->links() }}--}}
+                    {{ $posts->links() }}
                 </div>
-
                 <!-- Sidebar Area -->
                 <x-article-sidebar/>
             </div>

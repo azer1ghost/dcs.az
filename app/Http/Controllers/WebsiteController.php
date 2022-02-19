@@ -66,7 +66,7 @@ class WebsiteController extends Controller
 
         $posts = Post::published()
             ->when(is_numeric($category), fn($query) => $query->where('category_id', $category))
-            ->when(!is_null($search), fn($query) => $query->where('title', 'LIKE', "%$search%"))
+            ->when($request->filled('search'), fn($query) => $query->where('title', 'LIKE', "%$search%"))
             ->latest()
             ->paginate(5);
 

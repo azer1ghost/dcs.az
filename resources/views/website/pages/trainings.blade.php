@@ -42,21 +42,6 @@
                                             {{statictext('global', 'more')}}
                                         </button>
                                     </a>
-
-{{--                                        @auth--}}
-{{--                                            @if(!checkTrainingUser($training->id))--}}
-{{--                                                <a href="{{route('Join', $training->id)}}">--}}
-{{--                                                    <button class="btn btn-primary">{{statictext('global','join')}}</button>--}}
-{{--                                                </a>--}}
-{{--                                            @else--}}
-{{--                                                <button disabled class="btn btn-primary">{{statictext('global','joined')}}</button>--}}
-{{--                                            @endif--}}
-{{--                                        @else--}}
-{{--                                            <a href="{{route('Join', $training->id)}}">--}}
-{{--                                                <button class="btn btn-primary">{{statictext('global','join')}}</button>--}}
-{{--                                            </a>--}}
-{{--                                        @endauth--}}
-
                                 </div>
                             </div>
                         </div>

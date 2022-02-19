@@ -49,7 +49,6 @@
     <!-- Active js -->
     <script src="{{asset('assets/js/active.js')}}"></script>
 
-
     @yield('scripts')
 
     @if (session()->has('message'))
