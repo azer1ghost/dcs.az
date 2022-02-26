@@ -8,7 +8,7 @@
         "php": "^7.4|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.54",
+        "laravel/framework": "^v8.83.2",
         "laravel/sanctum": "^2.11",
         "laravel/ui": "^3.4",
         "milon/barcode": "^8.0",
