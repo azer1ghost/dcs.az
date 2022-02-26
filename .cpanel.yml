@@ -13,9 +13,9 @@ deployment:
     - /bin/cp -r ./routes          $DEPLOYPATH/
     # - /bin/cp -r ./storage       $DEPLOYPATH/
     # files
-    - /bin/cp .cpanel.yml    $DEPLOYPATH/
-    - /bin/cp .gitattributes $DEPLOYPATH/
-    - /bin/cp .gitignore     $DEPLOYPATH/
+    # - /bin/cp .cpanel.yml    $DEPLOYPATH/
+    # - /bin/cp .gitattributes $DEPLOYPATH/
+    # - /bin/cp .gitignore     $DEPLOYPATH/
     - /bin/cp artisan        $DEPLOYPATH/
     - /bin/cp composer.json  $DEPLOYPATH/
     - /bin/cp composer.lock  $DEPLOYPATH/
