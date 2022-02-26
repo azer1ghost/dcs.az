@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/mobilgro/public_html/
+    - export DEPLOYPATH=/home/dcs/public_html/
     # - /bin/cp -r * $DEPLOYPATH #all
     # folders
     - /bin/cp -r ./app             $DEPLOYPATH/
