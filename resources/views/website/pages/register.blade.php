@@ -11,26 +11,35 @@
                 <h2 class="text-muted">Register</h2>
             </div>
             <div class="form-group col-12 col-md-6">
-                <label for="name">{{statictext('register','name')}}</label>
-                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="{{statictext('register','name.placeholder')}}" id="name">
+                <label for="name">{{statictext('register', 'name')}}</label>
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" placeholder="{{statictext('register','name.placeholder')}}" id="name">
                 @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
             </div>
-            <div class="form-group col-12 col-md-3">
+            <div class="form-group col-12 col-md-6">
+                <label for="name">{{statictext('register', 'surname')}}</label>
+                <input type="text" name="surname" class="form-control @error('surname') is-invalid @enderror" value="{{old('surname')}}"  placeholder="{{statictext('register','surname.placeholder')}}" id="surname">
+                @error('surname')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+            <div class="form-group col-12 col-md-6">
                 <label for="email">{{statictext('login','email')}}</label>
-                <input type="email" placeholder="{{statictext('login','email')}}" name="email" class="form-control @error('email') is-invalid @enderror" id="email">
+                <input type="email" placeholder="{{statictext('login','email')}}" name="email" value="{{old('email')}}"  class="form-control @error('email') is-invalid @enderror" id="email">
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
             </div>
-            <div class="form-group col-12 col-md-3">
+            <div class="form-group col-12 col-md-6">
                 <label for="phone">{{statictext('login', 'phone')}}</label>
-                <input type="phone" placeholder="{{statictext('login', 'phone')}}" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone">
+                <input type="phone" placeholder="{{statictext('login', 'phone')}}" name="phone" value="{{old('phone')}}"  class="form-control @error('phone') is-invalid @enderror" id="phone">
                 @error('phone')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -48,7 +57,7 @@
             </div>
             <div class="form-group col-12 col-md-6">
                 <label for="Password2">{{statictext('login','re.password')}}</label>
-                <input type="password" name="password" class="form-control" placeholder="{{statictext('register', 'password2.placeholder')}}"  id="Password2">
+                <input type="password" name="password_confirmation" class="form-control" placeholder="{{statictext('register', 'password2.placeholder')}}"  id="Password2">
             </div>
 
             <div class="col-12 col-md-3">

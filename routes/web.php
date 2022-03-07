@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\SessionController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Middleware\Localization;
@@ -11,7 +13,15 @@ Localization::route();
 
 Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
+    Route::controller(SessionController::class)->group(function (){
+        Route::get('trainings/{training}/sessions', 'custom_index')->name('sessions');
+        Route::get('trainings/{training}/sessions/create', 'create')->name('sessions.create');
+    });
+    Route::controller(StudentController::class)->group(function (){
+        Route::get('trainings/{training}/sessions/{session}/students', 'custom_index')->name('students');
+    });
 });
+
 
 Route::controller(WebsiteController::class)->group(function () {
     Route::redirect('/','home')->name('index');
@@ -24,11 +34,12 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/certificate/{certificate:slug}', [CertificateController::class, 'index'])->name('certificate');
     Route::post('/subscribe', 'subscribe')->name('subscribe');
     Route::get('/unsubscribe/{email}', 'unsubscribe')->name('unsubscribe');
-    Route::middleware( 'auth')->group(function () {
+    Route::middleware( 'auth:student')->group(function () {
         Route::get('/profile', 'profile')->name('profile');
         Route::post('/profile', 'updateProfile');
-        Route::get('/trainings/{training:slug}/subscribe', 'trainingSubscribe')->name('trainingSubscribe');
+        Route::get('/trainings/{training:slug}/subscribe/{session}', 'trainingSubscribe')->name('trainingSubscribe');
         Route::get('/trainings/{training:slug}/unsubscribe', 'trainingUnsubscribe')->name('trainingUnsubscribe');
     });
     Route::get('/{page:slug}', 'page')->name('page');
 });
+

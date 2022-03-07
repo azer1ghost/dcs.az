@@ -19,7 +19,7 @@ if (!function_exists('statictext')) {
             $static[$text['key']] = $text['text'];
         }
 
-        return $static[$key];
+        return $static[$key] ?? $page.'.'.$key;
     }
 }
 

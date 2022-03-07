@@ -29,10 +29,10 @@
                     <!-- Select your language -->
                     <div class="d-flex align-items-center">
                         @if (Route::has('login'))
-                            @auth
+                            @auth('student')
                                 <div class="dropdown">
                                     <a id="profileDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                        <i class="far fa-user mr-1"></i> {{ auth()->user()->getAttribute('fullname') }}
+                                        <i class="far fa-user mr-1"></i> {{ auth('student')->user()->getAttribute('fullname') }}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" style="min-width: 70px !important;">
                                          <a class="dropdown-item" href="{{route('profile')}}">

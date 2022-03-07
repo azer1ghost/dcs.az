@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
-class User extends \TCG\Voyager\Models\User
+class Student extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +19,8 @@ class User extends \TCG\Voyager\Models\User
     protected $fillable = [
         'name',
         'surname',
-        'number',
+        'father',
+        'phone',
         'profession',
         'email',
         'password',
@@ -58,27 +56,27 @@ class User extends \TCG\Voyager\Models\User
 
     public function trainings(): BelongsToMany
     {
-        return $this->belongsToMany(Training::class)->withTimestamps();
+        return $this->belongsToMany(Training::class,'training_user','user_id')->withTimestamps();
     }
 
     public function certificates(): HasMany
     {
-        return $this->hasMany(Certificate::class);
+        return $this->hasMany(Certificate::class, 'user_id');
     }
 
-    public function setNumberAttribute($value): ?string
+    public function setPhoneAttribute($value): ?string
     {
-        return $this->attributes['number'] = phone_cleaner($value);
+        return $this->attributes['phone'] = phone_cleaner($value);
     }
 
-    public function getNumberAttribute($value): ?string
+    public function getPhoneAttribute($value): ?string
     {
         return phone_formatter($value, true);
     }
 
     public function getProtectedNumberAttribute(): ?string
     {
-        return str_pad(substr($this->getAttribute('number'), -4), strlen($this->getAttribute('number')), '*', STR_PAD_LEFT);
+        return str_pad(substr($this->getAttribute('phone'), -4), strlen($this->getAttribute('phone')), '*', STR_PAD_LEFT);
     }
 
     public function setNameAttribute($value): ?string

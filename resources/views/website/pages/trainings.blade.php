@@ -4,6 +4,17 @@
 @section('description', $meta->get('meta_description'))
 @section('keywords', $meta->get('meta_keywords'))
 
+@section('style')
+    <style>
+        .card{
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .card:hover{
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+@endsection
 
 @section('content')
 
@@ -24,18 +35,14 @@
                     @foreach($trainings as $training)
                         <div class="col-12 col-lg-4">
                             <!-- Single Blog Area -->
-                            <div class="single-blog-area">
+                            <div class="single-blog-area card">
                                 <div class="blog-thumbnail">
                                     <a href="{{route('training', $training->slug)}}">
                                         <img style="width: 100%" src="{{asset('storage/'.$training->image)}}">
                                     </a>
                                 </div>
-                                <div class="blog-content mt-0">
-                                    <span>{{ $training->created_at->diffForHumans() }}</span>
+                                <div class="blog-content mt-0 px-2 py-2">
                                     <a href="{{route('training',$training->slug)}}" class="post-title">{{$training->getTranslatedAttribute('name', 'locale', App::getLocale())}}</a>
-                                    <div class="blog-meta mb-1">
-                                        <a href="#" class="post-date"><i class="fa fa-calendar"></i> {{$training->created_at->format('d/m/Y')}}</a>
-                                    </div>
                                     <p class="mb-2">{{Str::of($training->getTranslatedAttribute('excerpt', 'locale', App::getLocale()))->limit(150)}}</p>
                                     <a href="{{route('training', $training->slug)}}">
                                         <button class="btn btn-outline-info">

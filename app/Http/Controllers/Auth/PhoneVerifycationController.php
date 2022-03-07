@@ -14,7 +14,7 @@ class PhoneVerifycationController extends Controller
 {
     use RedirectsUsers;
 
-    protected string $redirectTo = RouteServiceProvider::DASHBOARD;
+    protected string $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {
@@ -36,12 +36,12 @@ class PhoneVerifycationController extends Controller
     {
         $this->checkHasVerification($request);
 
-        if (!$request->user()->notifications()->where('type', '=','App\Notifications\Auth\VerifyPhone')->exists())
-        {
-            $request->user()->sendPhoneVerificationNotification();
-        }
+//        if (!$request->user()->notifications()->where('type', '=','App\Notifications\Auth\VerifyPhone')->exists())
+//        {
+//            $request->user()->sendPhoneVerificationNotification();
+//        }
 
-        return view('auth.verify-phone');
+//        return view('auth.verify-phone');
     }
 
 

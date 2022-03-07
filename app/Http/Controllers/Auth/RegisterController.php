@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,12 @@ class RegisterController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:student');
+    }
+
+    protected function guard()
+    {
+        return \Auth::guard('student');
     }
 
     public function showRegistrationForm()
@@ -29,25 +35,24 @@ class RegisterController extends Controller
     protected function validator(array $data): \Illuminate\Contracts\Validation\Validator
     {
         $data['phone'] = phone_cleaner($data['phone']);
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
             'surname' => ['required', 'string', 'max:50'],
-            'phone' => ['required', 'string', 'max:15', 'unique:users,phone'],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:50', 'unique:users,email'],
+            'phone' => ['required', 'string', 'max:15', 'unique:students,phone'],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:50', 'unique:students,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
-    protected function create(array $data): User
+    protected function create(array $data): Student
     {
-        return User::create([
+        return Student::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
-            'email' => null,
+            'email' => $data['email'],
             'phone' => $data['phone'],
-            'role_id' => 4,
             'password' => Hash::make($data['password']),
-            'verify_code' => rand(111111, 999999)
         ]);
     }
 }

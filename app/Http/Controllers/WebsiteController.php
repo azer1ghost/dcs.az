@@ -6,6 +6,7 @@ use App\Http\Requests\SubscriberRequest;
 use App\Http\Requests\UpdateProfile;
 use App\Models\Post;
 use App\Models\Service;
+use App\Models\Session;
 use App\Models\Subscriber;
 use App\Models\Training;
 use Illuminate\Http\RedirectResponse;
@@ -26,26 +27,34 @@ class WebsiteController extends Controller
         $meta = meta('trainings', ['banner']);
 
         $trainings = Training::active()->orderBy('order')->paginate(5);
+
         return view('website.pages.trainings', compact('trainings', 'meta'));
     }
 
     public function training(Training $training)
     {
+        $training->load('sessions');
+
         $meta = meta('trainings');
 
         return view('website.pages.training-detail', compact('training'));
     }
 
-    public function trainingSubscribe(Training $training): RedirectResponse
+    public function trainingSubscribe(Training $training, Session $session): RedirectResponse
     {
-        auth()->user()->trainings()->syncWithoutDetaching($training);
+        auth('student')
+            ->user()
+            ->trainings()
+            ->sync([
+                $training->getAttribute('id') => ['session_id' => $session->getAttribute('id')]
+            ], false);
 
         return back()->with('success');
     }
 
     public function trainingUnsubscribe(Training $training): RedirectResponse
     {
-        auth()->user()->trainings()->detach($training);
+        auth('student')->user()->trainings()->detach($training);
 
         return back()->with('success');
     }
@@ -54,7 +63,9 @@ class WebsiteController extends Controller
     public function services()
     {
         $meta = meta('services', ['banner']);
+
         $services = Service::active()->orderBy('order')->paginate(5);
+
         return view('website.pages.services', compact('services', 'meta'));
     }
 
@@ -97,7 +108,7 @@ class WebsiteController extends Controller
 
     public function profile()
     {
-        return view('website.pages.profile')->with(['user' => auth()->user()]);
+        return view('website.pages.profile')->with(['user' => auth('student')->user()]);
     }
 
     public function updateProfile(UpdateProfile $request): RedirectResponse

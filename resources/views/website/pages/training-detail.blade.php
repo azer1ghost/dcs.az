@@ -7,10 +7,10 @@
 
     <x-bread-crumb :title="statictext('homepage','services.title')">
         <x-bread-crumb-link :link="route('homepage')">
-            Homepage
+            {{statictext('breadcrumb', 'homepage')}}
         </x-bread-crumb-link>
         <x-bread-crumb-link :link="route('trainings')">
-            Trainings
+            {{statictext('trainings', 'header')}}
         </x-bread-crumb-link>
         <x-bread-crumb-link is-current="1">
             {{$training->getTranslatedAttribute('name')}}
@@ -33,25 +33,7 @@
                                     @endif
                                     <div class="line"></div>
                                     <h2>{{$training->getTranslatedAttribute('name')}}</h2>
-                                    {{-- $training->users[0]->name --}}
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <p>{{$training->date}}</p>
-                                @auth
-                                    @if(!auth()->user()->trainings->contains($training))
-                                        <a href="{{route('trainingSubscribe', $training)}}">
-                                            <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
-                                        </a>
-                                    @else
-                                        <button disabled class="btn btn-primary">{{statictext('global', 'joined')}}</button>
-                                    @endif
-                                @endauth
-                                @guest
-                                    <a href="{{route('trainingSubscribe', $training)}}">
-                                        <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
-                                    </a>
-                                @endguest
                             </div>
                             <div class="col-md-8">
                                 {!! $training->getTranslatedAttribute('content') !!}
@@ -60,6 +42,45 @@
                                 <div class="about-thumbnail mb-100">
                                     <img style="width: 400px" href="{{asset('storage/'.$training->image)}}" src="{{asset('storage/'.$training->image)}}" alt="{{$training->name}}" >
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Təlim proqramı</th>
+                                            <th scope="col">İştirakçı sayı</th>
+                                            <th scope="col">Tarix</th>
+                                            <th scope="col">Müddəti</th>
+                                            <th scope="col">Qeydiyyat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($training->sessions as $session)
+                                        <tr>
+                                            <th>{{$session->title}}</th>
+                                            <td>{{$session->persons_count}}</td>
+                                            <td>{{$session->start_time->format('Y/m/d H:i')}}</td>
+                                            <td>{{$session->duration}}</td>
+                                            <td>
+                                            @auth('student')
+                                                @unless(auth('student')->user()->trainings->contains($training))
+                                                    <a href="{{route('trainingSubscribe', ['training' => $training, 'session' => $session])}}">
+                                                        <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
+                                                    </a>
+                                                @else
+                                                    <button disabled class="btn btn-primary">{{statictext('global', 'joined')}}</button>
+                                                @endunless
+                                            @endauth
+                                            @guest
+                                                <a href="{{route('trainingSubscribe', ['training' => $training, 'session' => $session])}}">
+                                                    <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
+                                                </a>
+                                            @endguest
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

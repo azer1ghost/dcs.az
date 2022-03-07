@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use TCG\Voyager\Traits\Translatable;
 
 /**
@@ -23,5 +24,10 @@ class Training extends Model
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('status', true);
+    }
+
+    public function sessions(): HasMany
+    {
+        return $this->hasMany(Session::class);
     }
 }

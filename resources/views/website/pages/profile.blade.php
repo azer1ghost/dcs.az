@@ -29,7 +29,8 @@
                             <x-input::text name="email" :value="$user->getAttribute('email')" width="6"/>
                             <x-input::text name="name" :value="$user->getAttribute('name')" width="6"/>
                             <x-input::text name="surname" :value="$user->getAttribute('surname')" width="6"/>
-                            <x-input::text name="number" :value="$user->getAttribute('number')" width="6"/>
+                            <x-input::text name="father" :value="$user->getAttribute('father')" width="6"/>
+                            <x-input::text name="phone" :value="$user->getAttribute('phone')" width="6"/>
                             <x-input::text name="profession" :value="$user->getAttribute('profession')" width="6"/>
                             <x-input::submit value="Save"/>
                         </form>
