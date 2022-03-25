@@ -45,10 +45,6 @@ class Student extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = [
-        'trainings'
-    ];
-
     public function getFullnameAttribute(): string
     {
         return "{$this->getAttribute('name')} {$this->getAttribute('surname')}";
@@ -56,12 +52,12 @@ class Student extends Authenticatable
 
     public function trainings(): BelongsToMany
     {
-        return $this->belongsToMany(Training::class,'training_user','user_id')->withTimestamps();
+        return $this->belongsToMany(Training::class)->withTimestamps();
     }
 
     public function certificates(): HasMany
     {
-        return $this->hasMany(Certificate::class, 'user_id');
+        return $this->hasMany(Certificate::class);
     }
 
     public function setPhoneAttribute($value): ?string

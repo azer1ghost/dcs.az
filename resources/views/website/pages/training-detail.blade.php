@@ -1,7 +1,7 @@
 @extends('website.layout')
 
-@section('title', $training->name)
-@section('description', $training->excerpt)
+@section('title', $training->getTranslatedAttribute('name'))
+@section('description', $training->getTranslatedAttribute('excerpt'))
 
 @section('content')
 
@@ -55,15 +55,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($training->sessions as $session)
+                                    @foreach($training->getRelation('sessions') as $session)
                                         <tr>
-                                            <th>{{$session->title}}</th>
-                                            <td>{{$session->persons_count}}</td>
-                                            <td>{{$session->start_time->format('Y/m/d H:i')}}</td>
-                                            <td>{{$session->duration}}</td>
+                                            <th>{{$session->getTranslatedAttribute('title')}}</th>
+                                            <td>{{$session->getAttribute('persons_count')}}</td>
+                                            <td>{{$session->getAttribute('start_time')->format('Y/m/d H:i')}}</td>
+                                            <td>{{$session->getAttribute('duration')}}</td>
                                             <td>
                                             @auth('student')
-                                                @unless(auth('student')->user()->trainings->contains($training))
+                                                @unless(auth('student')->user()->getRelationValue('trainings')->contains($training))
                                                     <a href="{{route('trainingSubscribe', ['training' => $training, 'session' => $session])}}">
                                                         <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
                                                     </a>

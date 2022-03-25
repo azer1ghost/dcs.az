@@ -4,9 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Translatable;
 
 class Session extends Model
 {
+    use Translatable;
+
+    protected array $translatable = ['title'];
+
     protected $dates = ['start_time', 'end_time'];
 
     protected $fillable = ['training_id'];

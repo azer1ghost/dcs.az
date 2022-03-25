@@ -16,9 +16,9 @@ class Training extends Model
     use Translatable;
     protected array $translatable = ['name', 'content'];
 
-    public function users(): BelongsToMany
+    public function students(): BelongsToMany
     {
-        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(Student::class)->withTimestamps();
     }
 
     public function scopeActive(Builder $query): Builder

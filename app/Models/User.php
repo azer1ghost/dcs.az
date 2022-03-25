@@ -2,11 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -47,18 +44,9 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = [
-        'trainings'
-    ];
-
     public function getFullnameAttribute(): string
     {
         return "{$this->getAttribute('name')} {$this->getAttribute('surname')}";
-    }
-
-    public function trainings(): BelongsToMany
-    {
-        return $this->belongsToMany(Training::class)->withTimestamps();
     }
 
     public function certificates(): HasMany

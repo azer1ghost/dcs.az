@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Certificates\Main\Certificate;
 use App\Models\Session;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use setasign\Fpdi\Fpdi;
+use setasign\Fpdi\PdfReader\PageBoundaries;
 use TCG\Voyager\Events\BreadDataAdded;
 use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
@@ -313,4 +316,16 @@ class StudentController extends VoyagerBaseController
     }
 
 
+    public function certificate(Training $training, Session $session, Student $student, Request $request)
+    {
+        return (new Certificate)
+            ->student('JAFAROV AZER')
+            ->title('Working and Height')
+            ->date('27.02.2022')
+            ->duration('1 day')
+            ->teacher('Kazimov F')
+            ->regNumber('W@H/ 366')
+            ->expiredAt('27.02.2023')
+            ->export();
+    }
 }

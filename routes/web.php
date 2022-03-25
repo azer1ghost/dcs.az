@@ -19,9 +19,9 @@ Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     });
     Route::controller(StudentController::class)->group(function (){
         Route::get('trainings/{training}/sessions/{session}/students', 'custom_index')->name('students');
+        Route::get('trainings/{training}/sessions/{session}/students/{student}/certificate', 'certificate')->name('students.certificate');
     });
 });
-
 
 Route::controller(WebsiteController::class)->group(function () {
     Route::redirect('/','home')->name('index');
