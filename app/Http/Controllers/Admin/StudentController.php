@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use setasign\Fpdi\Fpdi;
-use setasign\Fpdi\PdfReader\PageBoundaries;
 use TCG\Voyager\Events\BreadDataAdded;
 use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
@@ -316,16 +314,25 @@ class StudentController extends VoyagerBaseController
     }
 
 
-    public function certificate(Training $training, Session $session, Student $student, Request $request)
+    public function certificate(Training $training, Session $session, Student $student)
     {
-        return (new Certificate)
-            ->student('JAFAROV AZER')
-            ->title('Working and Height')
-            ->date('27.02.2022')
-            ->duration('1 day')
-            ->teacher('Kazimov F')
-            ->regNumber('W@H/ 366')
-            ->expiredAt('27.02.2023')
-            ->export();
+        $certificate = \App\Models\Certificate::firstOrCreate(
+            [
+                'student_id' => $student->getAttribute('id'),
+                'training_id' => $training->getAttribute('id'),
+                'session_id' => $session->getAttribute('id')
+            ],
+            [
+                'title' => $training->getAttribute('name'),
+                'student' => $student->getAttribute('fullname'),
+                'teacher_id' => $session->getAttribute('teacher_id'),
+                'teacher' => 'Samir Nabiyev',
+                'start_at' => $session->getAttribute('start_time'),
+                'end_at' => $session->getAttribute('end_time'),
+                'expired_at' => $session->getAttribute('expired_at'),
+            ]
+        );
+
+        return $certificate->getPDF();
     }
 }
