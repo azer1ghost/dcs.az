@@ -72,7 +72,7 @@ class Certificate extends Model
 
             $certificate->setAttribute('slug', Str::slug(Str::random('25')));
 
-            $last_regnumber = self::newQuery()
+            $last_regnumber = (new self)->newQuery()
                 ->select('reg_number')
                 ->where('training_id', $certificate->getAttribute('training_id'))
                 ->latest('id')
