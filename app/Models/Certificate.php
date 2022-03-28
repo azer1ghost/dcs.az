@@ -42,6 +42,11 @@ class Certificate extends Model
         return $duration . ' day';
     }
 
+    public function getSerialNumberAttribute(): string
+    {
+        return $this->training->getAttribute('cert_prefix') . str_pad($this->getAttribute('reg_number'), 5, "0", STR_PAD_LEFT);
+    }
+
     public function getPDF()
     {
         return (new \App\Certificates\Main\Certificate)
@@ -51,7 +56,7 @@ class Certificate extends Model
             ->date($this->getAttribute('start_at')->format('d-m-Y'))
             ->duration($this->getAttribute('duration'))
             ->teacher($this->getAttribute('teacher'))
-            ->regNumber($this->getAttribute('reg_number'))
+            ->regNumber($this->getAttribute('serial_number'))
             ->expiredAt($this->getAttribute('expired_at')->format('d-m-Y'))
             ->export();
     }
@@ -67,8 +72,15 @@ class Certificate extends Model
 
             $certificate->setAttribute('slug', Str::slug(Str::random('25')));
 
-            //TODO reg_number query and generate
-            $certificate->setAttribute('reg_number', Str::slug(Str::random('10')));
+            $last_regnumber = self::newQuery()
+                ->select('reg_number')
+                ->where('training_id', $certificate->getAttribute('training_id'))
+                ->latest('id')
+                ->value('reg_number');
+
+            $last_regnumber++;
+
+            $certificate->setAttribute('reg_number', $last_regnumber);
         });
     }
 }
