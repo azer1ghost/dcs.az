@@ -105,6 +105,8 @@ class Certificate
 
     public function qrCode($img): Certificate
     {
+        $img = \Storage::path(substr($img, 10));
+
         $this->pdf->Image($img,'240', '265', '30', '30');
 
         return $this;

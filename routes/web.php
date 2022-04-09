@@ -23,8 +23,6 @@ Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     });
 });
 
-Route::get('/qr', [CertificateController::class,'generateQrCode']);
-
 Route::controller(WebsiteController::class)->group(function () {
     Route::redirect('/','home')->name('index');
     Route::get('/home', 'homepage')->name('homepage');
