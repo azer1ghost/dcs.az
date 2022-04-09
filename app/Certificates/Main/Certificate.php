@@ -105,8 +105,6 @@ class Certificate
 
     public function qrCode($img): Certificate
     {
-        $img = public_path($img);
-
         $this->pdf->Image($img,'240', '265', '30', '30');
 
         return $this;

@@ -28,11 +28,13 @@ class Certificate extends Model
         return $this->belongsTo(Session::class);
     }
 
-    public function getQrcodeAttribute(): string
+    public function getQrcodeAttribute()
     {
         $slug = route('certificate',  $this->getAttribute('slug'));
 
-        $image = (new DNS2D())->getBarcodePNGUri($slug,'QRCODE','100','100');
+        $image = (new DNS2D())->getBarcodePNGUri($slug,'QRCODE','100','100', [26,54,56]);
+
+        $image = public_path($image);
 
         return $image;
     }
