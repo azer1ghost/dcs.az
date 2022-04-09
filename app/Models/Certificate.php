@@ -61,7 +61,7 @@ class Certificate extends Model
             ->duration($this->getAttribute('duration'))
             ->teacher($this->getAttribute('teacher'))
             ->regNumber($this->getAttribute('serial_number'))
-            ->expiredAt($this->getAttribute('expired_at')->format('d-m-Y'))
+            ->expiredAt(optional($this->getAttribute('expired_at'))->format('d-m-Y'))
             ->export();
     }
 
