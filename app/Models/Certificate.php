@@ -28,7 +28,7 @@ class Certificate extends Model
         return $this->belongsTo(Session::class);
     }
 
-    public function getQrcodeAttribute()
+    public function getQrcodeAttribute(): string
     {
         $slug = route('certificate',  $this->getAttribute('slug'));
 
@@ -55,7 +55,7 @@ class Certificate extends Model
     {
         return (new \App\Certificates\Main\Certificate)
             ->student($this->getAttribute('student'))
-            ->title($this->getAttribute('title'))
+            ->title($this->getTranslatedAttribute('title'))
             ->qrCode($this->getAttribute('qrcode'))
             ->date($this->getAttribute('start_at')->format('d-m-Y'))
             ->duration($this->getAttribute('duration'))
