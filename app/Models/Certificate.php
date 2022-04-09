@@ -32,7 +32,7 @@ class Certificate extends Model
     {
         $slug = route('certificate',  $this->getAttribute('slug'));
 
-        $image = (new DNS2D())->getBarcodePNGPath($slug,'QRCODE','100','100');
+        $image = (new DNS2D())->getBarcodePNGUri($slug,'QRCODE','100','100');
 
         return $image;
     }
