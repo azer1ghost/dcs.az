@@ -55,7 +55,7 @@ class Certificate extends Model
     {
         return (new \App\Certificates\Main\Certificate)
             ->student($this->getAttribute('student'))
-            ->title($this->getTranslatedAttribute('title'))
+            ->title($this->getAttribute('title'))
             ->qrCode($this->getAttribute('qrcode'))
             ->date($this->getAttribute('start_at')->format('d-m-Y'))
             ->duration($this->getAttribute('duration'))

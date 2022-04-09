@@ -323,7 +323,7 @@ class StudentController extends VoyagerBaseController
                 'session_id' => $session->getAttribute('id')
             ],
             [
-                'title' => $training->getAttribute('name'),
+                'title' => $training->getTranslatedAttribute('name'),
                 'student' => $student->getAttribute('fullname'),
                 'teacher_id' => $session->getAttribute('teacher_id'),
                 'teacher' => 'Samir Nabiyev',
