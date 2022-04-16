@@ -18,8 +18,10 @@ Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
         Route::get('trainings/{training}/sessions/create', 'create')->name('sessions.create');
     });
     Route::controller(StudentController::class)->group(function (){
-        Route::get('trainings/{training}/sessions/{session}/students', 'custom_index')->name('students');
-        Route::get('trainings/{training}/sessions/{session}/students/{student}/certificate', 'certificate')->name('students.certificate');
+        Route::get('trainings/{training}/sessions/{session}/students', 'index')->name('sessions.students');
+        Route::post('trainings/{training}/sessions/{session}/students', 'attachStudent')->name('sessions.students.attach');
+        Route::delete('trainings/{training}/sessions/{session}/students', 'detachStudent')->name('sessions.students.detach');
+        Route::get('trainings/{training}/sessions/{session}/students/{student}/certificate', 'certificate')->name('sessions.students.certificate');
     });
 });
 

@@ -63,17 +63,17 @@
                                             <td>{{$session->getAttribute('duration')}}</td>
                                             <td>
                                             @auth('student')
-                                                @unless(auth('student')->user()->getRelationValue('trainings')->contains($training))
-                                                    <a href="{{route('trainingSubscribe', ['training' => $training, 'session' => $session])}}">
+                                                @unless(auth('student')->user()->getRelationValue('sessions')->contains($session))
+                                                    <a href="{{route('trainingSubscribe', [ 'training' => $training, 'session' => $session])}}">
                                                         <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
                                                     </a>
                                                 @else
                                                     <button disabled class="btn btn-primary">{{statictext('global', 'joined')}}</button>
                                                 @endunless
                                             @endauth
-                                            @guest
-                                                <a href="{{route('trainingSubscribe', ['training' => $training, 'session' => $session])}}">
-                                                    <button class="btn btn-outline-primary">{{statictext('global', 'join')}}</button>
+                                            @guest('student')
+                                                <a href="{{route('register')}}">
+                                                    <button class="btn btn-outline-primary">{{statictext('global', 'register')}}</button>
                                                 </a>
                                             @endguest
                                             </td>

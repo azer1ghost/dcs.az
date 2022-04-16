@@ -35,34 +35,34 @@
                             <x-input::submit value="Save"/>
                         </form>
                     </div>
-                    <div class="my-4">
-                        <h4 class="m-2 mb-4">My trainings</h4>
-                        <div class="list-group">
-                            @forelse($user->trainings as $training)
-                            <div class="list-group-item list-group-item-action">
-                                <div class="d-flex justify-content-between ">
-                                    <a href="{{route('training', $training)}}" class="m-2 btn-link">
-                                        {{$training->getTranslatedAttribute('name')}}
-                                    </a>
-                                    <a href="{{route('trainingUnsubscribe', $training)}}">
-                                        <button class="btn btn-outline-warning">Unsubscribe</button>
-                                    </a>
-                                </div>
-                            </div>
-                            @empty
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="d-flex justify-content-between ">
-                                        <p class="m-2">
-                                            Your are not have any trainings
-                                        </p>
-                                        <a class="m-2" href="{{route('trainings')}}">
-                                            <button class="btn btn-outline-info">Go to trainings</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforelse
-                        </div>
-                    </div>
+{{--                    <div class="my-4">--}}
+{{--                        <h4 class="m-2 mb-4">My trainings</h4>--}}
+{{--                        <div class="list-group">--}}
+{{--                            @forelse($user->trainings as $training)--}}
+{{--                            <div class="list-group-item list-group-item-action">--}}
+{{--                                <div class="d-flex justify-content-between ">--}}
+{{--                                    <a href="{{route('training', $training)}}" class="m-2 btn-link">--}}
+{{--                                        {{$training->getTranslatedAttribute('name')}}--}}
+{{--                                    </a>--}}
+{{--                                    <a href="{{route('trainingUnsubscribe', $training)}}">--}}
+{{--                                        <button class="btn btn-outline-warning">Unsubscribe</button>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @empty--}}
+{{--                                <div class="list-group-item list-group-item-action">--}}
+{{--                                    <div class="d-flex justify-content-between ">--}}
+{{--                                        <p class="m-2">--}}
+{{--                                            Your are not have any trainings--}}
+{{--                                        </p>--}}
+{{--                                        <a class="m-2" href="{{route('trainings')}}">--}}
+{{--                                            <button class="btn btn-outline-info">Go to trainings</button>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            @endforelse--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="my-4">
                         <h4 class="m-2 mb-4">My Certificates</h4>
                         <div class="list-group">

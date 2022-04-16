@@ -31,7 +31,7 @@ class Students extends AbstractAction
 
     public function getDefaultRoute(): string
     {
-        return route('students', ['training' => $this->data->training_id, 'session' => $this->data]);
+        return route('sessions.students', ['training' => $this->data->training_id, 'session' => $this->data]);
     }
 
     public function shouldActionDisplayOnDataType(): bool

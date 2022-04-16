@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use TCG\Voyager\Traits\Translatable;
 
@@ -14,12 +13,8 @@ use TCG\Voyager\Traits\Translatable;
 class Training extends Model
 {
     use Translatable;
+    
     protected array $translatable = ['name', 'content'];
-
-    public function students(): BelongsToMany
-    {
-        return $this->belongsToMany(Student::class)->withTimestamps();
-    }
 
     public function scopeActive(Builder $query): Builder
     {

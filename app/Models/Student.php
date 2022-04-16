@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Pivots\Subscription;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -50,9 +52,14 @@ class Student extends Authenticatable
         return "{$this->getAttribute('name')} {$this->getAttribute('surname')}";
     }
 
-    public function trainings(): BelongsToMany
+    public function trainings(): HasManyThrough
     {
-        return $this->belongsToMany(Training::class)->withTimestamps();
+        return $this->hasManyThrough(Training::class, Subscription::class);
+    }
+
+    public function sessions(): BelongsToMany
+    {
+        return $this->belongsToMany(Session::class,'student_session')->using(Subscription::class)->withTimestamps();
     }
 
     public function certificates(): HasMany

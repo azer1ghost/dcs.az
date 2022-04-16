@@ -10,8 +10,8 @@ use App\Models\Session;
 use App\Models\Subscriber;
 use App\Models\Training;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use App\Models\Page;
+use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
@@ -42,23 +42,17 @@ class WebsiteController extends Controller
 
     public function trainingSubscribe(Training $training, Session $session): RedirectResponse
     {
-        auth('student')
-            ->user()
-            ->trainings()
-            ->sync([
-                $training->getAttribute('id') => ['session_id' => $session->getAttribute('id')]
-            ], false);
+        auth('student')->user()->sessions()->attach($session);
 
         return back()->with('success');
     }
 
-    public function trainingUnsubscribe(Training $training): RedirectResponse
+    public function trainingUnsubscribe(Session $session): RedirectResponse
     {
-        auth('student')->user()->trainings()->detach($training);
+        auth('student')->user()->sessions()->detach($session);
 
         return back()->with('success');
     }
-
 
     public function services()
     {
@@ -108,7 +102,9 @@ class WebsiteController extends Controller
 
     public function profile()
     {
-        return view('website.pages.profile')->with(['user' => auth('student')->user()]);
+        return view('website.pages.profile')->with([
+            'user' => auth('student')->user()
+        ]);
     }
 
     public function updateProfile(UpdateProfile $request): RedirectResponse
