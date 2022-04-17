@@ -27,7 +27,7 @@
                                     </tr>
                                     <tr>
                                         <th>Training</th>
-                                        <td>{{$certificate->getRelationValue('training')->getTranslationAttribute('name')}}</td>
+                                        <td>{{$certificate->getRelationValue('training')->getTranslatedAttribute('name')}}</td>
                                     </tr>
                                     <tr>
                                         <th>Company Name</th>
