@@ -1,4 +1,5 @@
 /* [Core Stylesheet - 1.0] */
+
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700");
 /* :: 2.0 Import All CSS */
@@ -16,6 +17,13 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
+}
+
+/* #003679 */
+
+:root {
+    --blue: #4e637c;
+    --white: #ffffff;
 }
 
 h1,
@@ -172,7 +180,7 @@ img {
 
 /* :: 3.4.0 Preloader */
 .preloader {
-    background-color: #003679;
+    background-color: var(--blue);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -439,7 +447,7 @@ img {
 
 /* :: 3.6.0 ScrollUp */
 #scrollUp {
-    background-color: #003679;
+    background-color: var(--blue);
     border-radius: 5px 0 0 5px;
     bottom: 70px;
     color: #ffffff;
@@ -489,12 +497,12 @@ img {
 .credit-btn:hover, .credit-btn:focus {
     font-size: 14px;
     font-weight: 700;
-    background-color: #003679;
+    background-color: var(--blue);
     color: #ffffff;
 }
 
 .credit-btn.btn-2 {
-    background-color: #003679;
+    background-color: var(--blue);
     color: #ffffff;
 }
 
@@ -505,14 +513,14 @@ img {
 
 .credit-btn.btn-3 {
     background-color: transparent;
-    color: #003679;
-    border: 2px solid #003679;
+    color: var(--blue);
+    border: 2px solid var(--blue);
     line-height: 44px;
 }
 
 .credit-btn.btn-3:hover, .credit-btn.btn-3:focus {
-    border: 2px solid #003679;
-    background-color: #003679;
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
     color: #ffffff;
 }
 
@@ -566,7 +574,7 @@ img {
 }
 
 .header-area .top-header-area .top-contact-info a:hover, .header-area .top-header-area .top-contact-info a:focus {
-    color: #003679;
+    color: var(--blue);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -585,7 +593,7 @@ img {
 .header-area .credit-main-menu::after {
     width: 50%;
     height: 100%;
-    background-color: #003679;
+    background-color: var(--blue);
     position: absolute;
     top: 0;
     left: 0;
@@ -600,7 +608,7 @@ img {
 .header-area .credit-main-menu .classy-navbar {
     height: 85px;
     padding: 0;
-    background-color: #003679;
+    background-color: var(--blue);
 }
 
 @media only screen and (max-width: 767px) {
@@ -629,13 +637,13 @@ img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .header-area .credit-main-menu .classy-navbar .classynav ul li a {
-        color: #003679;
+        color: var(--blue);
     }
 }
 
 @media only screen and (max-width: 767px) {
     .header-area .credit-main-menu .classy-navbar .classynav ul li a {
-        color: #003679;
+        color: var(--blue);
     }
 }
 
@@ -663,19 +671,19 @@ img {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .header-area .credit-main-menu .classy-navbar .classynav ul li.megamenu-item > a::after,
     .header-area .credit-main-menu .classy-navbar .classynav ul li.has-down > a::after {
-        color: #003679;
+        color: var(--blue);
     }
 }
 
 @media only screen and (max-width: 767px) {
     .header-area .credit-main-menu .classy-navbar .classynav ul li.megamenu-item > a::after,
     .header-area .credit-main-menu .classy-navbar .classynav ul li.has-down > a::after {
-        color: #003679;
+        color: var(--blue);
     }
 }
 
 .header-area .credit-main-menu .classy-navbar .classynav ul li ul li a {
-    color: #003679;
+    color: var(--blue);
     font-size: 14px;
 }
 
@@ -715,7 +723,7 @@ img {
 .header-area .credit-main-menu .classy-navbar .contact a {
     display: inline-block;
     font-size: 24px;
-    color: #003679;
+    color: var(--blue);
     font-weight: 700;
     line-height: 85px;
 }
@@ -790,7 +798,7 @@ img {
     margin-top: -23px;
     font-size: 18px;
     color: #ffffff;
-    background-color: #003679;
+    background-color: var(--blue);
     left: 20px;
     text-align: center;
     -webkit-transition-duration: 500ms;
@@ -1099,7 +1107,7 @@ img {
 }
 
 .special-feature-area.style-2 .special-feature-content {
-    background-color: #003679;
+    background-color: var(--blue);
 }
 
 .special-feature-area.style-2 .special-feature-content .feature-text {
@@ -1220,7 +1228,7 @@ img {
 .cta-2-area {
     position: relative;
     z-index: 1;
-    background-color: #003679;
+    background-color: var(--blue);
     padding-top: 50px;
 }
 
@@ -1451,7 +1459,7 @@ img {
 .contact--area.contact-page .contact-content {
     padding: 35px;
     border: none;
-    background-color: #003679;
+    background-color: var(--blue);
 }
 
 .contact--area.contact-page .contact-content h5 {
@@ -1540,7 +1548,7 @@ img {
 }
 
 .newsletter-area .nl-content form button:hover {
-    background-color: #003679;
+    background-color: var(--blue);
 }
 
 .newsletter-area .nl-content form button:focus {
@@ -1585,7 +1593,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: transparent;
-    border: 8px solid #003679;
+    border: 8px solid var(--blue);
     top: 0;
     left: 0;
     position: absolute;
@@ -1615,7 +1623,7 @@ img {
 }
 
 .single-team-member-area .team-thumb .view-more a:hover {
-    background-color: #003679;
+    background-color: var(--blue);
 }
 
 .single-team-member-area .team-thumb:hover {
@@ -2071,7 +2079,7 @@ img {
     top: 0;
     right: 0;
     z-index: 99;
-    background-color: #003679;
+    background-color: var(--blue);
     color: #ffbb38;
     font-weight: 600;
     font-size: 14px;
@@ -2082,7 +2090,7 @@ img {
 
 .single-widget-area.search-widget form button:hover {
     background-color: #ffbb38;
-    color: #003679;
+    color: var(--blue);
 }
 
 .single-widget-area.cata-widget ul {
@@ -2094,7 +2102,7 @@ img {
     font-size: 15px;
     padding: 7px 0;
     font-weight: 600;
-    color: #003679;
+    color: var(--blue);
 }
 
 .single-widget-area.cata-widget ul li a:hover, .single-widget-area.cata-widget ul li a:focus {
@@ -2172,7 +2180,7 @@ img {
 .comment_area .comment-content .comment-meta .post-author:hover,
 .comment_area .comment-content .comment-meta .post-date:hover,
 .comment_area .comment-content .comment-meta .reply:hover {
-    color: #003679;
+    color: var(--blue);
 }
 
 .comment_area .comment-content .comment-meta .reply {
@@ -2319,7 +2327,7 @@ img {
 }
 
 .map-area .contact---area .contact-page {
-    background-color: #003679;
+    background-color: var(--blue);
     padding: 70px 45px;
 }
 
@@ -2369,7 +2377,7 @@ img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #003679;
+    background-color: var(--blue);
     text-align: center;
     margin-right: 20px;
     line-height: 60px;
@@ -2487,7 +2495,7 @@ img {
 
 .single-accordion h6 a {
     font-family: "Open Sans", sans-serif;
-    background-color: #003679;
+    background-color: var(--blue);
     border-radius: 5px;
     color: #ffffff;
     display: block;
@@ -2614,7 +2622,7 @@ img {
 }
 
 .credit-tabs-content .nav-tabs .nav-link.active {
-    background-color: #003679;
+    background-color: var(--blue);
     color: #ffffff;
 }
 
@@ -2635,7 +2643,7 @@ img {
 .single-icons {
     position: relative;
     z-index: 1;
-    background-color: #003679;
+    background-color: var(--blue);
     border-radius: 5px;
     text-align: center;
     padding: 50px 20px;

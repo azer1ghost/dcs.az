@@ -16,7 +16,7 @@
 
     <!-- Stylesheet -->
 {{--    <link rel="stylesheet" href="{{mix('assets/css/app.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}?v=1.02">
 
     <!-- Font awesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.pro.min.css') }}">
