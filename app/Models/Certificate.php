@@ -43,7 +43,7 @@ class Certificate extends Model
     {
         $duration = $this->getAttribute('start_at')->diff($this->getAttribute('end_at'))->d;
 
-        return $duration < 1 ? "1 day" : $duration . ' day';
+        return $duration < 1 ? "1 day" : $duration . ' days';
     }
 
     public function getSerialNumberAttribute(): string
