@@ -8,8 +8,6 @@ class CertificateController extends Controller
 {
     public function index(Certificate $certificate)
     {
-        //TODO sertifikatin vaxtini yoxlmaq kodlari
-
-        return $certificate->getPDF();
+        return view('website.pages.check-certificate', compact('certificate'));
     }
 }

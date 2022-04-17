@@ -25,7 +25,9 @@ class Session extends Model
 
     public function getDurationAttribute(): string
     {
-        return $this->getAttribute('start_time')->diff($this->getAttribute('end_time'))->h . ' saat';
+        $diff = $this->getAttribute('start_time')->diff($this->getAttribute('end_time'));
+
+        return $diff->d > 1 ? $diff->d . ' days' : '1 day';
     }
 
     public function students(): BelongsToMany
