@@ -227,7 +227,7 @@
     <div class="page-content settings container-fluid">
             <div class="panel">
                 <div class="page-content settings container-fluid">
-                    @if(auth()->user()->role_id === 1)
+{{--                    @if(auth()->user()->role_id === 1)--}}
                     <ul class="nav nav-tabs">
                         @foreach($settings as $group => $setting)
                             <li @if($group == $active) class="active" @endif>
@@ -235,7 +235,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    @endif
+{{--                    @endif--}}
 
 {{--                    <form id="instagram_user" method="POST" action="{{route('instagram.update')}}">--}}
 {{--                        @csrf--}}
