@@ -55,7 +55,7 @@
                                     @endphp
                                     <tr class="{{$class}}">
                                         <th>Certificate expiry date</th>
-                                        <td>{{$expired_at}}</td>
+                                        <td>{{$expired_at->format('d.m.Y')}}</td>
                                     </tr>
                                 </thead>
                             </table>
