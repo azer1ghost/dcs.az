@@ -107,7 +107,7 @@
                 <div class="col-12">
                     <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
                         <!-- Footer Logo -->
-                        <a href="{{route('homepage')}}" class="footer-logo"><img style="max-width: 120px" src="{{ asset("storage")."/".setting('site.footer.logo') }}" alt=""></a>
+                        <a href="{{route('homepage')}}" class="footer-logo"><img style="max-width: 120px" src="{{ asset("storage")."/".setting('site.footer_logo') }}" alt=""></a>
 
                         <!-- Copywrite Text -->
                         <p class="copywrite-text">
