@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Pivots\Subscription;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -33,5 +34,13 @@ class Session extends Model
     public function students(): BelongsToMany
     {
         return $this->belongsToMany(Student::class, 'student_session')->using(Subscription::class)->withTimestamps();
+    }
+
+    /**
+     * @method static active()
+     */
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('status', true);
     }
 }

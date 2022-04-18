@@ -13,7 +13,9 @@ use TCG\Voyager\Traits\Translatable;
 class Service extends Model
 {
     use Translatable, SoftDeletes;
+
     protected array $translatable = ['title', 'text', 'excerpt'];
+
     /**
      * @method static active()
      */

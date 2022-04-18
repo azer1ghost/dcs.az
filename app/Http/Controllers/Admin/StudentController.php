@@ -23,9 +23,9 @@ class StudentController extends Controller
 
     public function attachStudent(Training $training, Session $session)
     {
-        $student = Student::query()->findOrFail(request('student_id'));
+        $student = Student::query()->findOrFail(request('student_id'))->only('id');
 
-        $session->students()->attach($student);
+        $session->students()->syncWithoutDetaching($student);
 
         return back()->with('success');
     }

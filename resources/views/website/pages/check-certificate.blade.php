@@ -2,6 +2,15 @@
 
 @section('title', "Certificate")
 
+@section('style')
+    <style>
+        td, th {
+            height: 60px;
+            vertical-align: middle !important;
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- ##### Content Area Start ###### -->
     <section class="about-area section-padding-100-0">
