@@ -26,7 +26,7 @@ class Certificate
      * @throws FilterException
      * @throws PdfTypeException
      */
-    public function __construct()
+    public function __construct($data)
     {
         define('FPDF_FONTPATH', app_path('Certificates/Main/assets/fonts'));
 
@@ -44,77 +44,77 @@ class Certificate
         $this->pdf->addPage($orientation, $size);
         $this->pdf->useImportedPage($pageId, 0, 0, $size['width'], $size['height']);
 
-        return $this;
-    }
+        // Insert fonts
+        $this->pdf->AddFont('Montserrat-ExtraBold');
+        $this->pdf->AddFont('Montserrat-Bold');
+        $this->pdf->AddFont('Montserrat-Regular');
+//        $this->pdf->AddFont('Montserrat-MediumItalic');
+//        $this->pdf->AddFont('Montserrat-Light');
+//        $this->pdf->AddFont('Montserrat-Medium');
 
-    public function student($text): Certificate
-    {
-        $this->pdf->AddFont('Parisian');
-        $this->pdf->SetFont("Parisian", "", 60);
+        // Set font color
         $this->pdf->SetTextColor(26,54,56);
-        $this->pdf->Cell(0, 190, $text, 0, true, 'C');
 
-        return $this;
-    }
+        // CERTIFICATE title
+        $this->pdf->SetFont('Montserrat-ExtraBold', '',56);
+        $this->pdf->Cell(0, 130, 'CERTIFICATE', 0, true, 'C');
 
-    public function title($text): Certificate
-    {
-        $this->pdf->AddFont('Montserrat-MediumItalic');
-        $this->pdf->SetFont("Montserrat-MediumItalic", "", 25);
-        $this->pdf->Cell(0, -90, $text, 0, true, 'C');
+        // This is to certify that
+        $this->pdf->SetFont('Montserrat-Regular', '',18.5);
+        $this->pdf->Cell(0, -98, 'This is to certify that', 0, true, 'C');
 
-        return $this;
-    }
+        // Student name
+        $this->pdf->SetFont('Montserrat-Bold', '',40);
+        $this->pdf->Cell(0, 162, $data['student'], 0, true, 'C');
 
-    public function date($text): Certificate
-    {
-        $this->pdf->AddFont('Montserrat-Medium');
-        $this->pdf->SetFont("Montserrat-Medium", "", 13);
-        $this->pdf->Text(77, 273.5, $text);
+        $this->pdf->SetFont('Montserrat-Regular', '',18.5);
 
-        return $this;
-    }
+        // company area
+        if (isset($data['company']))
+            $this->pdf->Cell(0, -134, "Is the employee of {$data['company']}", 0, true, 'C');
 
-    public function duration($text): Certificate
-    {
-        $this->pdf->Text(72.5, 279, $text);
+        $this->pdf->Cell(0, 155, "has attended and successfully completed", 0, true, 'C');
 
-        return $this;
-    }
+        // Course title
+        $this->pdf->SetFont('Montserrat-Bold', '',30);
+        $this->pdf->Cell(0, -120, '"'.$data['title'].'"', 0, true, 'C');
 
-    public function teacher($text): Certificate
-    {
-        $this->pdf->Text(93.5, 284.5, $text);
+        // Text static
+        $this->pdf->SetFont('Montserrat-Regular', '',18.5);
+        $this->pdf->Cell(0, 144, 'the training course based on International Standards', 0, true, 'C');
+        $this->pdf->Cell(0, -123, 'provided with theoretical and practical sessions by', 0, true, 'C');
 
-        return $this;
-    }
+        // Company name
+        $this->pdf->SetFont('Montserrat-ExtraBold', '',25);
+        $this->pdf->Cell(0, 148, '"DCS Group"', 0, true, 'C');
 
-    public function regNumber($text): Certificate
-    {
-        $this->pdf->Text(87, 290, $text);
+        // Date section
+        $this->pdf->SetFont('Montserrat-Bold', '',11.5);
+        $this->pdf->Text(19.5, 280, "Date of issue: {$data['date']}");
+        $this->pdf->Text(19.5, 285,"Expiry date: {$data['expiredAt']}");
+        $this->pdf->Text(19.5, 290,"Duration of Traning: {$data['duration']}");
 
-        return $this;
-    }
+        $this->pdf->Text(19.5, 300,"Registration Certifacate N: {$data['serial_number']}");
+        $this->pdf->Text(19.5, 305,"Instruktors/Examiner s Name: {$data['teacher']}");
 
-    public function expiredAt($text): Certificate
-    {
-        $this->pdf->Text(53, 295.5, $text);
+        // QR code
+        $this->pdf->Image($data['qrcode'],20, 315, 30, 30);
 
-        return $this;
-    }
+        // author by
+        $this->pdf->SetFont('Montserrat-ExtraBold', '',14);
+        $this->pdf->SetLineWidth(1);
+        $this->pdf->Line(185, 339, 260,339);
+        $this->pdf->Text(185, 345, "AUTHORISED BY: S.NABIYEV");
 
-    public function qrCode($img): Certificate
-    {
-        $this->pdf->Image($img,'240', '265', '30', '30');
 
-        return $this;
-    }
+        // Socials
+//        $this->pdf->SetFont('Montserrat-Bold', '',10);
+//        $this->pdf->Text(33, 362, setting('site.phone'));
+//        $this->pdf->Text(128, 362, setting('site.email'));
+//        $this->pdf->Text(223, 362, setting('site.adress'));
 
-    public function export()
-    {
-        $this->pdf->Text(35, 306, setting('site.phone'));
-        $this->pdf->Text(35, 315, setting('site.email'));
-        $this->pdf->Text(35, 324, setting('site.adress'));
+        // Brands
+        // TODO brand are here
 
         return $this->pdf->Output();
     }

@@ -5,6 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Milon\Barcode\DNS2D;
+use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
+use setasign\Fpdi\PdfParser\Filter\FilterException;
+use setasign\Fpdi\PdfParser\PdfParserException;
+use setasign\Fpdi\PdfParser\Type\PdfTypeException;
+use setasign\Fpdi\PdfReader\PdfReaderException;
 use Str;
 
 class Certificate extends Model
@@ -51,18 +56,27 @@ class Certificate extends Model
         return $this->training->getAttribute('cert_prefix') . str_pad($this->getAttribute('reg_number'), 5, "0", STR_PAD_LEFT);
     }
 
+    /**
+     * @throws CrossReferenceException
+     * @throws PdfReaderException
+     * @throws PdfParserException
+     * @throws FilterException
+     * @throws PdfTypeException
+     */
     public function getPDF()
     {
-        return (new \App\Certificates\Main\Certificate)
-            ->student($this->getAttribute('student'))
-            ->title($this->getAttribute('title'))
-            ->qrCode($this->getAttribute('qrcode'))
-            ->date($this->getAttribute('start_at')->format('d-m-Y'))
-            ->duration($this->getAttribute('duration'))
-            ->teacher($this->getAttribute('teacher'))
-            ->regNumber($this->getAttribute('serial_number'))
-            ->expiredAt(optional($this->getAttribute('expired_at'))->format('d-m-Y'))
-            ->export();
+        return (new \App\Certificates\Main\Certificate([
+            'student' => $this->getAttribute('student'),
+            'company' => '"Mekan LLC"',
+            'title' => $this->getAttribute('title'),
+            'qrcode' => $this->getAttribute('qrcode'),
+            'date' => $this->getAttribute('start_at')->format('d-m-Y'),
+            'duration' => $this->getAttribute('duration'),
+            'teacher' => $this->getAttribute('teacher'),
+            'serial_number' => $this->getAttribute('serial_number'),
+            'expiredAt' => optional($this->getAttribute('expired_at'))->format('d-m-Y'),
+        ]))
+        ->export();
     }
 
     /**
