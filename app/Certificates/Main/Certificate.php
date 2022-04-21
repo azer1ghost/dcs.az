@@ -70,8 +70,9 @@ class Certificate
         $this->pdf->SetFont('Montserrat-Regular', '',18.5);
 
         // company area
-        if (isset($data['company']))
+        if (!is_null($data['company'])) {
             $this->pdf->Cell(0, -134, "Is the employee of {$data['company']}", 0, true, 'C');
+        }
 
         $this->pdf->Cell(0, 155, "has attended and successfully completed", 0, true, 'C');
 
