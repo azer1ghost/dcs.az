@@ -106,7 +106,6 @@ class Certificate
         $this->pdf->Line(185, 339, 260,339);
         $this->pdf->Text(185, 345, "AUTHORISED BY: S.NABIYEV");
 
-
         // Socials
 //        $this->pdf->SetFont('Montserrat-Bold', '',10);
 //        $this->pdf->Text(33, 362, setting('site.phone'));

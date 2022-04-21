@@ -67,7 +67,7 @@ class Certificate extends Model
     {
         return (new \App\Certificates\Main\Certificate([
             'student' => $this->getAttribute('student'),
-            'company' => '"Mekan LLC"',
+            'company' => $this->getAttribute('company'),
             'title' => $this->getAttribute('title'),
             'qrcode' => $this->getAttribute('qrcode'),
             'date' => $this->getAttribute('start_at')->format('d-m-Y'),
