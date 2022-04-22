@@ -19,5 +19,7 @@ class AppServiceProvider extends ServiceProvider
 
         Voyager::addAction(\App\Actions\Sessions::class);
         Voyager::addAction(\App\Actions\Students::class);
+        Voyager::addAction(\App\Actions\Certificate::class);
+        Voyager::addAction(\App\Actions\InfoCertificate::class);
     }
 }

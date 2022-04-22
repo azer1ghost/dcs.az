@@ -13,22 +13,27 @@ class CertificateDimmer extends BaseDimmer
      */
     public function run()
     {
-        $certificates = Certificate::query()
+        $total = Certificate::query()->count();
+
+        $expired = Certificate::query()
             ->whereDate('expired_at', '<', now()->addDays(7))
-            ->get();
+            ->count();
 
-        return 'Vaxti kecmekde olan sertifikatlarin sayi '. $certificates->count();
+        $alert = $expired > 0;
 
-//        return view('voyager::dimmer', [
-//            'icon'   => 'voyager-group',
-//            'title'  => "{$count} students",
-//            'text'   => 'Student',
-//            'button' => [
-//                'text' => 'Go to students',
-//                'link' => route('voyager.students.index'),
-//            ],
-//            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
-//        ]);
+        $text = $alert ? "<b class='text-danger'>{$expired} Certtificate expired in one week</b>" : 'Certificate' ;
+
+        return view('voyager::widgets.certificates', [
+            'icon'   => 'voyager-documentation',
+            'title'  => "{$total} Certificate",
+            'text'   => $text,
+            'alert'  => $alert,
+            'button' => [
+                'text' => 'Go to Certificates',
+                'link' => route('voyager.certificates.index'),
+            ],
+            'image' => voyager_asset('images/widget-backgrounds/03.jpg'),
+        ]);
     }
 
     /**

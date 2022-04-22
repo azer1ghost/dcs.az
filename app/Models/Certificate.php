@@ -33,6 +33,16 @@ class Certificate extends Model
         return $this->belongsTo(Session::class);
     }
 
+    public function getIsExpiredAttribute(): bool
+    {
+        return $this->expired_at < now();
+    }
+
+    public function getIsExpiredInWeekAttribute(): bool
+    {
+        return $this->getAttribute('expired_at')->diff(now())->d < 7;
+    }
+
     public function getQrcodeAttribute(): string
     {
         $slug = route('certificate',  $this->getAttribute('slug'));
@@ -70,7 +80,7 @@ class Certificate extends Model
             'company' => $this->getAttribute('company'),
             'title' => $this->getAttribute('title'),
             'qrcode' => $this->getAttribute('qrcode'),
-            'date' => $this->getAttribute('start_at')->format('d-m-Y'),
+            'date' => $this->getAttribute('created_at')->format('d-m-Y'),
             'duration' => $this->getAttribute('duration'),
             'teacher' => $this->getAttribute('teacher'),
             'serial_number' => $this->getAttribute('serial_number'),
