@@ -11,7 +11,7 @@ class Training extends Component
 
     public function __construct()
     {
-        $this->trainings = \App\Models\Training::active()->orderBy('order')->get();
+        $this->trainings = \App\Models\Training::query()->orderBy('order')->limit(3)->active()->get();
     }
 
     public function render()

@@ -7,13 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use TCG\Voyager\Traits\Translatable;
 
-/**
- * @method static active()
- */
 class Training extends Model
 {
     use Translatable;
-    
+
     protected array $translatable = ['name', 'content'];
 
     public function scopeActive(Builder $query): Builder
