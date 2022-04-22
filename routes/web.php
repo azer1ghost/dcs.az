@@ -11,6 +11,12 @@ use TCG\Voyager\Voyager;
 Auth::routes();
 Localization::route();
 
+Route::any('hello', function (){
+    Notification::route('mail', 'mamedovazer124@gmail.com')
+        ->notify(new \App\Notifications\ExpiredCertificates(12));
+    echo 'yup';
+});
+
 Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
     Route::controller(SessionController::class)->group(function (){
