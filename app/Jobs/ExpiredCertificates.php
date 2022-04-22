@@ -28,7 +28,7 @@ class ExpiredCertificates
         if ($expired > 0) {
             $users = User::query()
                 ->whereHas('role', function ($q){
-                    $q->whereIn('name', ['developer']);
+                    $q->whereIn('name', ['developer', 'admin']);
                 })
                 ->get();
 

@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->job(ExpiredCertificates::class)->everyMinute();
+        $schedule->job(ExpiredCertificates::class)->twiceDailyAt(12,20);
     }
 
     /**
