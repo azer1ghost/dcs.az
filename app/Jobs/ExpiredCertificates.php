@@ -5,13 +5,12 @@ namespace App\Jobs;
 use App\Models\Certificate;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Notification;
 
-class ExpiredCertificates implements ShouldQueue
+class ExpiredCertificates
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -28,7 +27,7 @@ class ExpiredCertificates implements ShouldQueue
 
         if ($expired > 0) {
             $users = User::query()
-                ->whereHas('roles', function ($q){
+                ->whereHas('role', function ($q){
                     $q->whereIn('name', ['developer']);
                 })
                 ->get();
