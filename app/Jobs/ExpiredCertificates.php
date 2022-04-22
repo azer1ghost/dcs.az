@@ -29,7 +29,7 @@ class ExpiredCertificates implements ShouldQueue
         if ($expired > 0) {
             $users = User::query()
                 ->whereHas('roles', function ($q){
-                    $q->whereIn('name', ['Developer']);
+                    $q->whereIn('name', ['developer']);
                 })
                 ->get();
 
