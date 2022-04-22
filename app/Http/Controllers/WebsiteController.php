@@ -33,7 +33,9 @@ class WebsiteController extends Controller
 
     public function training(Training $training)
     {
-        $training->load('sessions');
+        $training->load(['sessions' => function($q){
+            $q->active();
+        }]);
 
         $meta = meta('trainings');
 
