@@ -1,11 +1,11 @@
 <!doctype html>
-{{--<html lang="{{config('app.locale')}}">--}}
+<html lang="{{config('app.locale')}}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{{--    <title>{{setting('site.title')}} | @yield('title', setting('site.title'))</title>--}}
+    <title>{{setting('site.title')}} | @yield('title', setting('site.title'))</title>
     <meta name="description" content="@yield('description', setting('site.description'))">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="MobileOptimized" content="320" />
