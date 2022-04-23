@@ -51,11 +51,11 @@ class StudentController extends Controller
                     'session_id' => $session->getAttribute('id')
                 ],
                 [
-                    'title' => $training->getTranslatedAttribute('name'),
+                    'title' =>  $session->getTranslatedAttribute('title', 'en') ?: $training->getTranslatedAttribute('name', 'en'),
                     'company' => $student->getAttribute('company'),
                     'student' => $student->getAttribute('fullname'),
                     'teacher_id' => $session->getAttribute('teacher_id'),
-                    'teacher' => 'Samir Nabiyev',
+                    'teacher' => $session->getAttribute('teacher') ?: 'Samir Nabiyev',
                     'start_at' => $session->getAttribute('start_time'),
                     'end_at' => $session->getAttribute('end_time'),
                     'expired_at' => $session->getAttribute('cert_expired_at'),
