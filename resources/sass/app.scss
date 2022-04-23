@@ -1,8 +1,9 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700");
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Bootstrap select
+@import url(lib/bootstrap.min.css);
+@import url(lib/classy-nav.css);
+@import url(lib/owl.carousel.min.css);
+@import url(lib/animate.css);
+@import url(lib/style.css);

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="{{config('app.locale')}}">
+{{--<html lang="{{config('app.locale')}}">--}}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{setting('site.title')}} | @yield('title', setting('site.title'))</title>
+{{--    <title>{{setting('site.title')}} | @yield('title', setting('site.title'))</title>--}}
     <meta name="description" content="@yield('description', setting('site.description'))">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="MobileOptimized" content="320" />
@@ -15,8 +15,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset(Voyager::image(setting('site.favicon')))}}">
 
     <!-- Stylesheet -->
-{{--    <link rel="stylesheet" href="{{mix('assets/css/app.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('assets/style.css')}}?v=1.04">
+    <link rel="stylesheet" href="{{mix('assets/css/app.css')}}">
 
     <!-- Font awesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.pro.min.css') }}">
@@ -35,19 +34,7 @@
     <x-footer/>
 
     <!-- ##### All Javascript Script ##### -->
-{{--    <script src="{{mix('assets/js/app.js')}}"></script>--}}
-
-    <!-- jQuery-2.2.4 js -->
-    <script src="{{asset('assets/js/jquery/jquery-2.2.4.min.js')}}"></script>
-    <!-- Popper js -->
-    <script src="{{asset('assets/js/bootstrap/popper.min.js')}}"></script>
-    <!-- Bootstrap js -->
-    <script src="{{asset('assets/js/bootstrap/bootstrap.min.js')}}"></script>
-
-    <!-- All Plugins js -->
-    <script src="{{asset('assets/js/plugins/plugins.js')}}"></script>
-    <!-- Active js -->
-    <script src="{{asset('assets/js/active.js')}}"></script>
+    <script src="{{mix('assets/js/app.js')}}"></script>
 
     @yield('scripts')
 

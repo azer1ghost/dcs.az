@@ -17,7 +17,7 @@
                                     <i class="{{$counter->getAttribute('icon')}}"></i>
                                 </div>
                                 <div class="scf-text">
-                                    <h2><span class="counter">{{$counter->getAttribute('value')}}</span></h2>
+                                    <h2><span class="counter" data-count="{{$counter->getAttribute('value')}}">0</span></h2>
                                     <p>{{$counter->getTranslatedAttribute('text')}}</p>
                                 </div>
                             </div>
