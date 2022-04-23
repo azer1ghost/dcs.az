@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
@@ -11,7 +12,9 @@ class Articles extends Component
 
     public function __construct()
     {
-        $this->articles = \App\Models\Post::published()->with('author')->latest()->limit(4)->get();
+        $this->articles = Cache::remember("component_blog_posts", config('cache.timeout'), function (){
+            return \App\Models\Post::published()->with('author')->latest()->limit(4)->get();
+        });
     }
 
     public function render()

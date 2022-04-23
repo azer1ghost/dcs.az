@@ -38,7 +38,7 @@
                             <div class="single-blog-area card">
                                 <div class="blog-thumbnail">
                                     <a href="{{route('training', $training->slug)}}">
-                                        <img style="width: 100%; height: 220px" src="{{asset('storage/'.$training->image)}}">
+                                        <img style="width: 100%; height: 220px" src="{{image($training->image)}}">
                                     </a>
                                 </div>
                                 <div class="blog-content mt-0 px-2 py-2">

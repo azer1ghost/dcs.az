@@ -37,9 +37,9 @@ class WebsiteController extends Controller
             $q->active();
         }]);
 
-        $meta = meta('trainings');
+        $meta = meta('trainings', ['banner']);
 
-        return view('website.pages.training-detail', compact('training'));
+        return view('website.pages.training-detail', compact('training', 'meta'));
     }
 
     public function trainingSubscribe(Training $training, Session $session): RedirectResponse
@@ -67,13 +67,13 @@ class WebsiteController extends Controller
 
     public function articles(Request $request)
     {
-        $meta = meta('articles', ['banner']);
+        $meta = meta('articles');
         $category = $request->get('category');
         $search = $request->get('search');
 
         $posts = Post::published()
             ->when(is_numeric($category), fn($query) => $query->where('category_id', $category))
-            ->when($request->filled('search'), fn($query) => $query->where('title', 'LIKE', "%$search%"))
+            ->when($request->filled('search'), fn($query) => $query->whereTranslation('title', 'LIKE', "%$search%"))
             ->latest()
             ->paginate(5);
 
@@ -82,6 +82,7 @@ class WebsiteController extends Controller
 
     public function article(Post $post)
     {
+        $post->load('author');
         return view('website.pages.article', compact('post'));
     }
 

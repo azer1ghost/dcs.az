@@ -26,7 +26,7 @@
                 <!-- Single News Area -->
                 <div class="col-12 col-lg-8">
                     <div class="row">
-                        @foreach($posts as $post)
+                        @forelse($posts as $post)
                             <div class="col-12 col-lg-6">
                                 <!-- Single Blog Area -->
                                 <div class="single-blog-area mb-70">
@@ -44,7 +44,17 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            @if(request('search'))
+                                <div class="col-12 alert alert-warning">
+                                    <p class="text-muted text-center m-3">Axtarışa uyğun heç bir nəticə tapılmadı</p>
+                                </div>
+                            @else
+                                <div class="col-12 alert alert-warning">
+                                    <p class="text-muted text-center m-3">Hazırda heç bir məqalə paylaşılmayıb</p>
+                                </div>
+                            @endif
+                        @endforelse
                     </div>
                     {{ $posts->links() }}
                 </div>

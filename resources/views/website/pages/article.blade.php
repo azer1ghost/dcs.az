@@ -17,7 +17,7 @@
                             <a href="#" style="padding-right: 10px" ><i class="fa fa-user-o"></i> {{$post->author->fullname}}</a>
                             <a href="#" ><i class="fa fa-calendar"></i> {{$post->created_at->format('d/m/Y')}}</a>
                         </div>
-                        <img class="popup-link" href="{{asset('storage/'.$post->image)}}" src="{{asset('storage/'.$post->image)}}" alt="">
+                        <img class="popup-link" src="{{image($post->image)}}" alt="{{$post->getTranslatedAttribute('title')}}">
                         {!! $post->getTranslatedAttribute('body') !!}
                     </div>
                 </div>

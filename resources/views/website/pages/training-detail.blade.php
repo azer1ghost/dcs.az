@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <x-bread-crumb :title="statictext('homepage','services.title')">
+    <x-bread-crumb :title="statictext('homepage','services.title')" :banner="$meta->get('banner')">
         <x-bread-crumb-link :link="route('homepage')">
             {{statictext('breadcrumb', 'homepage')}}
         </x-bread-crumb-link>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="about-thumbnail mb-100">
-                                    <img style="width: 400px" href="{{asset('storage/'.$training->image)}}" src="{{asset('storage/'.$training->image)}}" alt="{{$training->name}}" >
+                                    <img style="width: 400px" src="{{image($training->image)}}" alt="{{$training->getTranslatedAttribute('name')}}" >
                                 </div>
                             </div>
                             <div class="col-12">

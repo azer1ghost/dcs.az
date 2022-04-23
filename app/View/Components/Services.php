@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
@@ -11,7 +12,9 @@ class Services extends Component
 
     public function __construct()
     {
-        $this->services = \App\Models\Service::active()->orderBy('order')->get();
+        $this->services = Cache::remember("component_services", config('cache.timeout'), function (){
+            return \App\Models\Service::active()->orderBy('order')->get();
+        });
     }
 
     public function render()

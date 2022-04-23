@@ -9,7 +9,9 @@ if (!function_exists('statictext')) {
     {
         $lang = App::getLocale();
 
-        $statics = Statictext::where('group', $page)->get()->translate('locale', $lang);
+        $statics = Cache::remember("static_text_{$page}_{$lang}", config('cache.timeout'), function () use ($page, $lang){
+            return Statictext::where('group', $page)->get()->translate('locale', $lang);
+        });
 
         //Create empty array for static texts
         $static = array();

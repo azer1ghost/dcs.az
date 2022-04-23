@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
@@ -15,8 +16,12 @@ class Footer extends Component
     public function __construct()
     {
         $this->meta = meta('homepage');
-        $this->socials = \App\Models\Social::active()->orderBy('ordering')->get();
-        $this->services = \App\Models\Service::active()->orderBy('order')->get();
+        $this->socials = Cache::remember("component_footer_socials", config('cache.timeout'), function (){
+            return \App\Models\Social::active()->orderBy('ordering')->get();
+        });
+        $this->services = Cache::remember("component_footer_services", config('cache.timeout'), function (){
+            return \App\Models\Service::active()->orderBy('order')->get();
+        });
     }
 
     public function render()

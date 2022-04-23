@@ -3,8 +3,8 @@
 
         <!-- Single Sidebar Widget -->
         <div class="single-widget-area search-widget">
-            <form id="search">
-                <input type="search" name="search" id="search_input" placeholder="{{ statictext('blog', 'search') }}">
+            <form id="search" action="{{route('articles')}}">
+                <input type="search" name="search" id="search_input" value="{{request('search')}}" placeholder="{{ statictext('blog', 'search') }}">
                 <button type="submit">{{ statictext('blog', 'search') }}</button>
             </form>
         </div>
