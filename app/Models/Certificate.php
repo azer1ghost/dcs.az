@@ -80,7 +80,7 @@ class Certificate extends Model
             'company' => $this->getAttribute('company'),
             'title' => $this->getAttribute('title'),
             'qrcode' => $this->getAttribute('qrcode'),
-            'date' => $this->getAttribute('created_at')->format('d-m-Y'),
+            'date' => $this->getAttribute('end_at')->format('d-m-Y'),
             'duration' => $this->getAttribute('duration'),
             'teacher' => $this->getAttribute('teacher'),
             'serial_number' => $this->getAttribute('serial_number'),
