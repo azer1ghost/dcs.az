@@ -12,7 +12,7 @@
                     @foreach($counters as $counter)
                         <div class="col-12 col-sm-6 col-lg-3">
                             <!-- Single Cool Facts -->
-                            <div class="single-cool-fact d-flex align-items-center mb-100">
+                            <div class="single-cool-fact d-flex align-items-center justify-content-md-start justify-content-center mb-100">
                                 <div class="scf-icon mr-15">
                                     <i class="{{$counter->getAttribute('icon')}}"></i>
                                 </div>

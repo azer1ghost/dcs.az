@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <!-- Section Heading -->
-                <div class="section-heading text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
+                <div class="section-heading  mb-100 wow fadeInUp" data-wow-delay="100ms">
                     <div class="line"></div>
                     <p>{{statictext('homepage', 'services.uptitle')}}</p>
                     <h2>{{statictext('homepage', 'services.title')}}</h2>

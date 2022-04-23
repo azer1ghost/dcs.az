@@ -43,8 +43,8 @@
                                     <img style="width: 400px" src="{{image($training->image)}}" alt="{{$training->getTranslatedAttribute('name')}}" >
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <table class="table">
+                            <div class="col-12 table-responsive">
+                                <table class="table table-hover ">
                                     <thead>
                                         <tr>
                                             <th scope="col">Təlim proqramı</th>

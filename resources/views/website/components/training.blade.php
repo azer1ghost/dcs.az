@@ -1,7 +1,7 @@
 <!-- ##### Features Area Start ###### -->
 <section class="features-area section-padding-100-0">
     <div class="container">
-        <div class="row align-items-end">
+        <div class="row align-items-end text-md-left text-center">
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="100ms">
                     <!-- Section Heading -->

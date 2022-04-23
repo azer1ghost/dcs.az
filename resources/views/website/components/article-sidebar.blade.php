@@ -1,16 +1,16 @@
 <div class="col-12 col-sm-9 col-md-6 col-lg-4">
-    <div class="sidebar-area mb-100">
+    <div class="sidebar-area mt-5">
 
         <!-- Single Sidebar Widget -->
         <div class="single-widget-area search-widget">
             <form id="search" action="{{route('articles')}}">
-                <input type="search" name="search" id="search_input" value="{{request('search')}}" placeholder="{{ statictext('blog', 'search') }}">
+                <input type="search" class="border border-dark" name="search" id="search_input" value="{{request('search')}}" placeholder="{{ statictext('blog', 'search') }}">
                 <button type="submit">{{ statictext('blog', 'search') }}</button>
             </form>
         </div>
 
         <!-- Single Sidebar Widget -->
-        <div class="single-widget-area cata-widget">
+        <div class="single-widget-area cata-widget d-md-block d-none">
             <div class="widget-heading">
                 <div class="line"></div>
                 <h4>{{ statictext('blog', 'categories') }}</h4>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Single Sidebar Widget -->
-        <div class="single-widget-area tabs-widget">
+        <div class="single-widget-area tabs-widget d-md-block d-none">
             <div class="widget-heading">
                 <div class="line"></div>
                 <h4>{{ statictext('blog','lastestnews') }}</h4>
@@ -43,7 +43,7 @@
                                         <span> {{ $article->getAttribute('created_at')->diffForHumans() }}</span>
                                         <a href="{{route('article', $article)}}">{{$article->getTranslatedAttribute('title')}}</a>
                                         <div class="news-metas">
-                                            <a href="#" class="post-author"><i class="fa fa-user-o"></i> {{$article->author_id}}</a>
+                                            <a href="#" class="post-author"><i class="fa fa-user-o"></i> {{$article->author->getAttribute('fullname')}}</a>
                                             <a href="#" class="post-date"><i class="fa fa-calendar"></i> {{$article->getAttribute('created_at')->format('d/m/Y')}}</a>
                                         </div>
                                     </div>

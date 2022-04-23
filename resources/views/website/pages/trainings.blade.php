@@ -20,7 +20,7 @@
 
     <x-bread-crumb :title="statictext('trainings', 'header')" :banner="$meta->get('banner')">
         <x-bread-crumb-link :link="route('homepage')">
-            Homepage
+            {{statictext('breadcrumb', 'homepage')}}
         </x-bread-crumb-link>
         <x-bread-crumb-link is-current="1">
             {{statictext('trainings', 'header')}}
@@ -35,14 +35,14 @@
                     @foreach($trainings as $training)
                         <div class="col-12 col-lg-4">
                             <!-- Single Blog Area -->
-                            <div class="single-blog-area card">
-                                <div class="blog-thumbnail">
+                            <div class="single-blog-area card mb-4">
+                                <div class="blog-thumbnail mb-0">
                                     <a href="{{route('training', $training->slug)}}">
                                         <img style="width: 100%; height: 220px" src="{{image($training->image)}}">
                                     </a>
                                 </div>
-                                <div class="blog-content mt-0 px-2 py-2">
-                                    <a href="{{route('training',$training->slug)}}" class="post-title">{{$training->getTranslatedAttribute('name', 'locale', App::getLocale())}}</a>
+                                    <div class="blog-content mt-0 px-2 py-2">
+                                    <a href="{{route('training',$training->slug)}}" class="post-title" style="font-size: 16px">{{$training->getTranslatedAttribute('name', 'locale', App::getLocale())}}</a>
                                     <p class="mb-2">{{Str::of($training->getTranslatedAttribute('excerpt', 'locale', App::getLocale()))->limit(150)}}</p>
                                     <a href="{{route('training', $training->slug)}}">
                                         <button class="btn btn-outline-info">

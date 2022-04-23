@@ -8,7 +8,7 @@
 
     <x-bread-crumb :title="$page->getTranslatedAttribute('title')" :banner="$page->getAttribute('banner')">
         <x-bread-crumb-link :link="route('homepage')">
-            Homepage
+            {{statictext('breadcrumb', 'homepage')}}
         </x-bread-crumb-link>
         <x-bread-crumb-link is-current="1">
             {{$page->getTranslatedAttribute('title')}}
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-12 col-md-12">
                     <div class="about-thumbnail mb-100">
-                        <img style="max-width: 400px" class="popup-link" href="{{asset('storage/'.$page['image'])}}" src="{{asset('storage/'.$page['image'])}}" alt="{{$page['title']}}" >
+                        <img style="max-width: 400px; width: 100%" class="popup-link" src="{{image($page['image'])}}" alt="{{$page->getTranslatedAttribute('title')}}" >
                     </div>
                 </div>
             </div>

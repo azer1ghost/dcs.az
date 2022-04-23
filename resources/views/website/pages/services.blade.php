@@ -16,7 +16,7 @@
 
     <x-bread-crumb :title="statictext('homepage','services.title')" :banner="$meta->get('banner')">
         <x-bread-crumb-link :link="route('homepage')">
-            Homepage
+            {{statictext('breadcrumb', 'homepage')}}
         </x-bread-crumb-link>
         <x-bread-crumb-link is-current="1">
             {{statictext('homepage','services.title')}}
@@ -52,7 +52,9 @@
                                              role="tabpanel"
                                              aria-labelledby="list-open{{$service->getAttribute('id')}}">
                                             <h3>{{$service->getTranslatedAttribute('title')}}</h3>
-                                            {!!$service->getTranslatedAttribute('text')!!}
+                                            <p>
+                                                {!!$service->getTranslatedAttribute('text')!!}
+                                            </p>
                                         </div>
                                     @endforeach
                                 </div>
