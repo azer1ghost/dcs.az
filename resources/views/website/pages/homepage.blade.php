@@ -8,9 +8,9 @@
 
     <x-slider/>
 
-    <x-training/>
-
     <x-counters/>
+
+    <x-training/>
 
     <x-services/>
 

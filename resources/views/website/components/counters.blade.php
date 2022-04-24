@@ -1,4 +1,4 @@
-<section class="miscellaneous-area bg-gray section-padding-100-0">
+<section class="miscellaneous-area bg-gray mt-5">
     <div class="container">
         <div class="col-12">
             <div class="elements-title mb-30">
