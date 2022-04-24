@@ -19,6 +19,11 @@ class Training extends Model
         return $query->where('status', true);
     }
 
+    public function scopeOrder(Builder $query): Builder
+    {
+        return $query->orderBy('order');
+    }
+
     public function sessions(): HasMany
     {
         return $this->hasMany(Session::class);
