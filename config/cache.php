@@ -16,7 +16,7 @@ return [
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
-    'cache.timeout' => 1,
+    'timeout' => 3600,
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
