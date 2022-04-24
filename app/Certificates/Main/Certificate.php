@@ -92,10 +92,10 @@ class Certificate
         $this->pdf->SetFont('Montserrat-Bold', '',11.5);
         $this->pdf->Text(19.5, 280, "Date of issue: {$data['date']}");
         $this->pdf->Text(19.5, 285,"Expiry date: {$data['expiredAt']}");
-        $this->pdf->Text(19.5, 290,"Duration of Traning: {$data['duration']}");
+        $this->pdf->Text(19.5, 290,"Duration of Training: {$data['duration']}");
 
-        $this->pdf->Text(19.5, 300,"Registration Certifacate N: {$data['serial_number']}");
-        $this->pdf->Text(19.5, 305,"Instruktors/Examiner s Name: {$data['teacher']}");
+        $this->pdf->Text(19.5, 300,"Registration Certificate N: {$data['serial_number']}");
+        $this->pdf->Text(19.5, 305,"Instructors/Examiner's Name: {$data['teacher']}");
 
         // QR code
         $this->pdf->Image($data['qrcode'],20, 315, 30, 30);
