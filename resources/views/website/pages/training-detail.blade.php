@@ -59,8 +59,8 @@
                                         <tr>
                                             <th>{{$session->getTranslatedAttribute('title')}}</th>
                                             <td>{{$session->getAttribute('persons_count')}}</td>
-                                            <td>{{$session->getAttribute('start_time')->format('Y/m/d H:i')}}</td>
-                                            <td>{{$session->getAttribute('duration')}}</td>
+                                            <td>{{$session->getAttribute('started_at')->format('Y/m/d H:i')}}</td>
+                                            <td>{{ trans_choice('auth.days', $session->duration, ['days' => $session->duration]) }}</td>
                                             <td>
                                             @auth('student')
                                                 @unless(auth('student')->user()->getRelationValue('sessions')->contains($session))

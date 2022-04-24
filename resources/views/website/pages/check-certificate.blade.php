@@ -42,10 +42,10 @@
                                         <th>Company Name</th>
                                         <td>{{config('app.name')}}</td>
                                     </tr>
-{{--                                    <tr>--}}
-{{--                                        <th>Trainer Name</th>--}}
-{{--                                        <td>Mark</td>--}}
-{{--                                    </tr>--}}
+                                    <tr>
+                                        <th>Trainer Name</th>
+                                        <td>{{$certificate->getAttribute('teacher')}}</td>
+                                    </tr>
                                     <tr>
                                         <th>Assessment Result</th>
                                         <td>PASS</td>
@@ -56,7 +56,7 @@
                                     </tr>
                                     <tr>
                                         <th>Certificate issue date</th>
-                                        <td>{{$certificate->getAttribute('created_at')->format('d.m.Y')}}</td>
+                                        <td>{{$certificate->getAttribute('started_at')->format('d.m.Y')}}</td>
                                     </tr>
                                     @php
                                         $expired_at = $certificate->getAttribute('expired_at');

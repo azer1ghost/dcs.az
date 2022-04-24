@@ -56,8 +56,8 @@ class StudentController extends Controller
                     'student' => $student->getAttribute('fullname'),
                     'teacher_id' => $session->getAttribute('teacher_id'),
                     'teacher' => $session->getAttribute('teacher') ?: 'Samir Nabiyev',
-                    'start_at' => $session->getAttribute('start_time'),
-                    'end_at' => $session->getAttribute('end_time'),
+                    'started_at' => $session->getAttribute('started_at'),
+                    'duration' => $session->getAttribute('duration'),
                     'expired_at' => $session->getAttribute('cert_expired_at'),
                 ]
             );

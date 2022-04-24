@@ -16,7 +16,7 @@ class Certificate extends Model
 {
     protected $guarded = ['id'];
 
-    protected $dates = ['start_at', 'end_at', 'expired_at'];
+    protected $dates = ['started_at', 'expired_at'];
 
     public function student(): BelongsTo
     {
@@ -54,13 +54,6 @@ class Certificate extends Model
         return $image;
     }
 
-    public function getDurationAttribute(): string
-    {
-        $duration = $this->getAttribute('start_at')->diff($this->getAttribute('end_at'))->d;
-
-        return $duration < 1 ? "1 day" : $duration . ' days';
-    }
-
     public function getSerialNumberAttribute(): string
     {
         return $this->training->getAttribute('cert_prefix') . str_pad($this->getAttribute('reg_number'), 5, "0", STR_PAD_LEFT);
@@ -80,8 +73,8 @@ class Certificate extends Model
             'company' => $this->getAttribute('company'),
             'title' => $this->getAttribute('title'),
             'qrcode' => $this->getAttribute('qrcode'),
-            'date' => $this->getAttribute('end_at')->format('d-m-Y'),
-            'duration' => $this->getAttribute('duration'),
+            'date' => $this->getAttribute('started_at')->format('d-m-Y'),
+            'duration' => trans_choice('auth.days', $this->duration, ['days' => $this->duration]),
             'teacher' => $this->getAttribute('teacher'),
             'serial_number' => $this->getAttribute('serial_number'),
             'expiredAt' => optional($this->getAttribute('expired_at'))->format('d-m-Y'),

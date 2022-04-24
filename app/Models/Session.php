@@ -15,20 +15,13 @@ class Session extends Model
 
     protected array $translatable = ['title'];
 
-    protected $dates = ['start_time', 'end_time'];
+    protected $dates = ['started_at'];
 
-    protected $fillable = ['training_id'];
+    protected $guarded = ['id'];
 
     public function training(): BelongsTo
     {
         return $this->belongsTo(Training::class);
-    }
-
-    public function getDurationAttribute(): string
-    {
-        $diff = $this->getAttribute('start_time')->diff($this->getAttribute('end_time'));
-
-        return $diff->d > 1 ? $diff->d . ' days' : '1 day';
     }
 
     public function students(): BelongsToMany
