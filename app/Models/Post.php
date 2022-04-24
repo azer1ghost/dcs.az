@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cache;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -40,15 +41,23 @@ class Post extends Model
         return $this->belongsTo(User::class, 'author_id', 'id')->withDefault(['name' => 'Admin', 'surname' => '']);
     }
 
-
     public function scopePublished(Builder $query): Builder
     {
         return $query->where('status', '=', static::PUBLISHED);
     }
 
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(Voyager::modelClass('Category'));
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::saved(function () {
+            Cache::forget('component_blog_posts');
+            Cache::forget('component_blog_categories');
+            Cache::forget('component_posts');
+        });
     }
 }
