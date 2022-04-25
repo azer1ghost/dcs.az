@@ -9,9 +9,14 @@ use TCG\Voyager\Facades\Voyager;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Register services.
+     *
+     * @return void
+     */
     public function register()
     {
-        //
+        $this->app->register(RuleServiceProvider::class);
     }
 
     public function boot()
@@ -25,4 +30,5 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addAction(\App\Actions\Certificate::class);
         Voyager::addAction(\App\Actions\InfoCertificate::class);
     }
+
 }
