@@ -32,10 +32,13 @@ class Phone implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        return ! Student::query()
-            ->where('id', '!=', request('id'))
-            ->where('phone', phone_cleaner($value))
-            ->exists();
+        if(is_null(phone_cleaner($value)))
+            return true;
+        else
+            return ! Student::query()
+                ->where('id', '!=', request('id'))
+                ->where('phone', phone_cleaner($value))
+                ->exists();
     }
 
     /**
