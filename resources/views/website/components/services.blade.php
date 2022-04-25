@@ -16,7 +16,7 @@
         @foreach($services as $service)
             <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="{{$service->getAttribute('link')}}" class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">
+                    <a href="{{route('services')}}" class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">
                         <div class="icon">
                             <i class="{{$service->getAttribute('icon')}}"></i>
                         </div>
