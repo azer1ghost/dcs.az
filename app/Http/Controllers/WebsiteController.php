@@ -26,7 +26,7 @@ class WebsiteController extends Controller
     {
         $meta = meta('trainings', ['banner']);
 
-        $trainings = Training::active()->orderBy('order')->paginate(5);
+        $trainings = Training::active()->orderBy('order')->paginate(12);
 
         return view('website.pages.trainings', compact('trainings', 'meta'));
     }
