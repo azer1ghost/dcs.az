@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Cache;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Traits\Translatable;
+use App\Traits\Translatable;
 
 /**
  * @method static where(string $string, $page)

@@ -6,7 +6,7 @@ use Cache;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use TCG\Voyager\Traits\Translatable;
+use App\Traits\Translatable;
 
 class Training extends Model
 {

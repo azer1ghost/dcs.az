@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Resizable;
-use TCG\Voyager\Traits\Translatable;
+use App\Traits\Translatable;
 
 /**
  * @method static published()

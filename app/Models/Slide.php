@@ -5,7 +5,7 @@ namespace App\Models;
 use Cache;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Traits\Translatable;
+use App\Traits\Translatable;
 
 /**
  * @method static active()

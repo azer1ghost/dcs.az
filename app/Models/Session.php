@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Pivots\Subscription;
+use App\Traits\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use TCG\Voyager\Traits\Translatable;
 
 class Session extends Model
 {
