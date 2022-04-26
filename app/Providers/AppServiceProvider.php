@@ -29,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addAction(\App\Actions\Students::class);
         Voyager::addAction(\App\Actions\Certificate::class);
         Voyager::addAction(\App\Actions\InfoCertificate::class);
+        Voyager::useModel('DataType', \App\Models\DataType::class);
+        Voyager::useModel('DataRow', \App\Models\DataRow::class);
     }
 
 }
