@@ -57,7 +57,7 @@
                                     <tbody>
                                     @foreach($training->getRelation('sessions') as $session)
                                         <tr>
-                                            <th>{{$session->getTranslatedAttribute('title')}}</th>
+                                            <th>{{$session->getTranslatedAttribute('title') ?: $training->getTranslatedAttribute('name')}}</th>
                                             <td>{{$session->getAttribute('persons_count')}}</td>
                                             <td>{{$session->getAttribute('started_at')->format('Y/m/d H:i')}}</td>
                                             <td>{{ trans_choice('auth.days', $session->duration, ['days' => $session->duration]) }}</td>
