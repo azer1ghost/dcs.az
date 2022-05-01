@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\Models\Certificate;
+use App\Models\Company;
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -21,9 +23,19 @@ class ExpiredCertificates
      */
     public function handle()
     {
-        $expired = Certificate::query()
-            ->whereDate('expired_at', '<', now()->addWeek())
-            ->count();
+        $companies = Company::query()
+            ->withCount(['certificates' => fn($q) => $q->expiredIn(7)])
+            ->whereHas('certificates', fn($q) => $q->expiredIn(7))
+            ->get();
+
+        $students = Student::query()
+            ->withCount(['certificates' => fn($q) => $q->expiredIn(7)])
+            ->whereHas('certificates', fn($q) => $q->expiredIn(7))
+            ->get();
+
+        //certificates_count
+
+        $expired = Certificate::expiredIn(7)->count();
 
         if ($expired > 0) {
             $users = User::query()

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class DataRow extends \TCG\Voyager\Models\DataRow
+class Setting extends \TCG\Voyager\Models\Setting
 {
     protected $connection = "sqlite";
 }

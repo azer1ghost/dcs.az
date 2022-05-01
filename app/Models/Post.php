@@ -17,6 +17,8 @@ use App\Traits\Translatable;
  */
 class Post extends Model
 {
+    protected $connection = "mysql";
+
     use Translatable;
     use Resizable;
 

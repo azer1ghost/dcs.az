@@ -15,6 +15,8 @@ class Service extends Model
 {
     use Translatable, SoftDeletes;
 
+    protected $connection = "mysql";
+
     protected array $translatable = ['title', 'text', 'excerpt'];
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Pivots\Subscription;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -12,6 +13,8 @@ use Illuminate\Notifications\Notifiable;
 class Student extends Authenticatable
 {
     use Notifiable;
+
+    protected $connection = "mysql";
 
     /**
      * The attributes that are mass assignable.
@@ -47,6 +50,8 @@ class Student extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $with = ['company'];
+
     public function getFullnameAttribute(): string
     {
         return "{$this->getAttribute('name')} {$this->getAttribute('surname')}";
@@ -65,6 +70,16 @@ class Student extends Authenticatable
     public function certificates(): HasMany
     {
         return $this->hasMany(Certificate::class);
+    }
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class)->withDefault();
+    }
+
+    public function getCompanyNameAttribute(): ?string
+    {
+        return $this->company->getAttribute('name');
     }
 
     public function setPhoneAttribute($value): ?string

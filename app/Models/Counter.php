@@ -13,6 +13,8 @@ class Counter extends Model
 {
     use Translatable;
 
+    protected $connection = "mysql";
+
     protected array $translatable = ['text'];
 
     public function scopeActive(Builder $query): Builder

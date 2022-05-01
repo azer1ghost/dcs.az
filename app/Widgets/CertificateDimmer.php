@@ -15,9 +15,7 @@ class CertificateDimmer extends BaseDimmer
     {
         $total = Certificate::query()->count();
 
-        $expired = Certificate::query()
-            ->whereDate('expired_at', '<', now()->addDays(7))
-            ->count();
+        $expired = Certificate::expiredIn(7)->count();
 
         $alert = $expired > 0;
 

@@ -10,5 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Subscriber extends Model
 {
+    protected $connection = "mysql";
+
     protected $fillable = ['email', 'token', 'lang'];
 }

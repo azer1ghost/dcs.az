@@ -15,6 +15,8 @@ class Slide extends Model
 {
     use Translatable;
 
+    protected $connection = "mysql";
+
     protected array $translatable = ['main_text', 'banner_text','button_text','button_link'];
 
     public function scopeActive(Builder $query): Builder

@@ -15,7 +15,8 @@
         "milon/barcode": "^8.0",
         "setasign/fpdf": "^1.8",
         "setasign/fpdi": "^2.3",
-        "tcg/voyager": "^1.5"
+        "tcg/voyager": "^1.5",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

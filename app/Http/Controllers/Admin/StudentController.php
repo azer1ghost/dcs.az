@@ -52,7 +52,7 @@ class StudentController extends Controller
                 ],
                 [
                     'title' =>  $session->getTranslatedAttribute('title', 'en') ?: $training->getTranslatedAttribute('name', 'en'),
-                    'company' => $student->getAttribute('company'),
+                    'company' => $student->getAttribute('companyName'),
                     'student' => $student->getAttribute('fullname'),
                     'teacher_id' => $session->getAttribute('teacher_id'),
                     'teacher' => $session->getAttribute('teacher') ?: 'Samir Nabiyev',

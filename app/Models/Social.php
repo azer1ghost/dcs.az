@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Social extends Model
 {
+    protected $connection = "mysql";
+
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('status', true);

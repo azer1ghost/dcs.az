@@ -12,8 +12,13 @@ use setasign\Fpdi\PdfParser\Type\PdfTypeException;
 use setasign\Fpdi\PdfReader\PdfReaderException;
 use Str;
 
+/**
+ * @method static expiredIn(int $int)
+ */
 class Certificate extends Model
 {
+    protected $connection = "mysql";
+
     protected $guarded = ['id'];
 
     protected $dates = ['started_at', 'expired_at'];
@@ -41,6 +46,11 @@ class Certificate extends Model
     public function getIsExpiredInWeekAttribute(): bool
     {
         return $this->getAttribute('expired_at')->diff(now())->d < 7;
+    }
+
+    public function scopeExpiredIn($query, $days = 7)
+    {
+        return $query->whereDate('expired_at', '<', now()->addDays($days));
     }
 
     public function getQrcodeAttribute(): string

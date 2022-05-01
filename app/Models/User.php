@@ -11,6 +11,8 @@ class User extends \TCG\Voyager\Models\User
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $connection = "sqlite";
+
     /**
      * The attributes that are mass assignable.
      *

@@ -13,6 +13,8 @@ class Statictext extends Model
 {
     use Translatable;
 
+    protected $connection = "mysql";
+
     protected array $translatable = ['text'];
 
     public static function boot()

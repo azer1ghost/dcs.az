@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reset extends Model
 {
+    protected $connection = "mysql";
+
     protected $table = "password_resets";
-    protected $fillable = ['email','token'];
+
+    protected $fillable = ['email', 'token'];
 }

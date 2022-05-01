@@ -13,6 +13,8 @@ class Session extends Model
 {
     use Translatable;
 
+    protected $connection = "mysql";
+
     protected array $translatable = ['title'];
 
     protected $dates = ['started_at'];
