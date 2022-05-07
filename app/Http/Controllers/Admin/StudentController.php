@@ -15,7 +15,7 @@ class StudentController extends Controller
         $session->load('students');
 
         return view('voyager::students.index',[
-            'students' => Student::query()->get(),
+            'students' => Student::query()->latest('id')->get(),
             'session' => $session,
             'training' => $training
         ]);
@@ -55,7 +55,7 @@ class StudentController extends Controller
                     'company' => $student->getAttribute('companyName'),
                     'student' => $student->getAttribute('fullname'),
                     'teacher_id' => $session->getAttribute('teacher_id'),
-                    'teacher' => $session->getAttribute('teacher') ?: 'Samir Nabiyev',
+                    'teacher' => $session->getAttribute('teacher'),
                     'started_at' => $session->getAttribute('started_at'),
                     'duration' => $session->getAttribute('duration'),
                     'expired_at' => $session->getAttribute('cert_expired_at'),

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Session;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -187,7 +188,7 @@ class SessionController extends VoyagerBaseController
 
     public function create($id)
     {
-        $training = Training::findOrFail($id);
+        $training = Training::query()->findOrFail($id);
 
         $request = request();
 
@@ -200,7 +201,8 @@ class SessionController extends VoyagerBaseController
 
         $dataTypeContent = (strlen($dataType->model_name) != 0)
             ? new $dataType->model_name([
-                'training_id' => $id
+                'training_id' => $id,
+                'title' => $training->getTranslatedAttribute('name', 'en')
             ])
             : false;
 
@@ -310,5 +312,13 @@ class SessionController extends VoyagerBaseController
         ]);
     }
 
+    public function destroy(Request $request, $id)
+    {
+        $session = Session::query()->findOrFail($id);
+
+        parent::destroy($request, $id);
+
+        return redirect()->route("sessions", $session->getAttribute('training_id'));
+    }
 
 }
