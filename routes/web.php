@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Middleware\Localization;
@@ -13,10 +14,14 @@ Localization::route();
 
 Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
+
+    Route::resource('groups.trainings', TrainingController::class);
+
     Route::controller(SessionController::class)->group(function (){
         Route::get('trainings/{training}/sessions', 'custom_index')->name('sessions');
         Route::get('trainings/{training}/sessions/create', 'create')->name('sessions.create');
     });
+
     Route::controller(StudentController::class)->group(function (){
         Route::get('trainings/{training}/sessions/{session}/students', 'index')->name('sessions.students');
         Route::post('trainings/{training}/sessions/{session}/students', 'attachStudent')->name('sessions.students.attach');

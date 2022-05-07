@@ -14,6 +14,8 @@ class VoyagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Voyager::addAction(\App\Actions\Trainings::class);
+        Voyager::addAction(\App\Actions\TrainingsEdit::class);
         Voyager::addAction(\App\Actions\Sessions::class);
         Voyager::addAction(\App\Actions\Students::class);
         Voyager::addAction(\App\Actions\Certificate::class);
