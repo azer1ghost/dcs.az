@@ -16,11 +16,7 @@ Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
 
     Route::resource('groups.trainings', TrainingController::class);
-
-    Route::controller(SessionController::class)->group(function (){
-        Route::get('trainings/{training}/sessions', 'custom_index')->name('sessions');
-        Route::get('trainings/{training}/sessions/create', 'create')->name('sessions.create');
-    });
+    Route::resource('groups.trainings.sessions', SessionController::class);
 
     Route::controller(StudentController::class)->group(function (){
         Route::get('trainings/{training}/sessions/{session}/students', 'index')->name('sessions.students');

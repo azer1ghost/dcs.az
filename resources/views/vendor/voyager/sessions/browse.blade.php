@@ -8,7 +8,7 @@
             <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
         </h1>
         @can('add', app($dataType->model_name))
-            <a href="{{ route('sessions.create', $training) }}" class="btn btn-success btn-add-new">
+            <a href="{{ route('groups.trainings.sessions.create', [Request::route('group'), Request::route('training')]) }}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
             </a>
         @endcan
@@ -252,7 +252,7 @@
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
                                             @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
+                                                @if (!method_exists($action, 'massAction') && get_class($action) != "TCG\Voyager\Actions\EditAction")
                                                     @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach

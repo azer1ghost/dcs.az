@@ -17,6 +17,7 @@ class VoyagerServiceProvider extends ServiceProvider
         Voyager::addAction(\App\Actions\Trainings::class);
         Voyager::addAction(\App\Actions\TrainingsEdit::class);
         Voyager::addAction(\App\Actions\Sessions::class);
+        Voyager::addAction(\App\Actions\SessionsEdit::class);
         Voyager::addAction(\App\Actions\Students::class);
         Voyager::addAction(\App\Actions\Certificate::class);
         Voyager::addAction(\App\Actions\InfoCertificate::class);

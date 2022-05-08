@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class TrainingsEdit extends AbstractAction
+class SessionsEdit extends AbstractAction
 {
     public function getTitle()
     {
@@ -31,11 +31,11 @@ class TrainingsEdit extends AbstractAction
 
     public function shouldActionDisplayOnDataType(): bool
     {
-        return $this->dataType->slug == 'trainings';
+        return $this->dataType->slug == 'sessions';
     }
 
     public function getDefaultRoute(): string
     {
-        return route('groups.trainings.edit', [$this->data->getAttribute('group_id'), $this->data->{$this->data->getKeyName()}]);
+        return route('groups.trainings.sessions.edit', [request()->route('group'), $this->data->getAttribute('training_id'), $this->data->{$this->data->getKeyName()}]);
     }
 }

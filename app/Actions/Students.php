@@ -24,8 +24,7 @@ class Students extends AbstractAction
     public function getAttributes(): array
     {
         return [
-            'class' => 'btn btn-sm btn-success pull-right',
-            'style' => 'margin-right: 5px'
+            'class' => 'btn btn-sm btn-success pull-right'
         ];
     }
 

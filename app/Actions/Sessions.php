@@ -25,13 +25,13 @@ class Sessions extends AbstractAction
     {
         return [
             'class' => 'btn btn-sm btn-success pull-right',
-            'style' => 'margin-right: 5px'
+            'style' => 'margin-right: 1px'
         ];
     }
 
     public function getDefaultRoute(): string
     {
-        return route('sessions', $this->data);
+        return route('groups.trainings.sessions.index', [request()->route('group'), $this->data]);
     }
 
     public function shouldActionDisplayOnDataType(): bool

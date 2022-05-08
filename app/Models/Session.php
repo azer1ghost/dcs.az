@@ -38,4 +38,9 @@ class Session extends Model
     {
         return $query->where('status', true);
     }
+
+    public function scopeByTrainingId($query)
+    {
+        return $query->where('training_id', request()->route('training'));
+    }
 }

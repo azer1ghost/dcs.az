@@ -39,6 +39,11 @@ class Training extends Model
         return $this->belongsTo(Group::class)->withDefault();
     }
 
+    public function scopeByGroupId($query)
+    {
+        return $query->order()->where('group_id', request()->route('group'));
+    }
+
     public static function boot()
     {
         parent::boot();
