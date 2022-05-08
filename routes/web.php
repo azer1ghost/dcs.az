@@ -18,11 +18,13 @@ Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     Route::resource('groups.trainings', TrainingController::class);
     Route::resource('groups.trainings.sessions', SessionController::class);
 
-    Route::controller(StudentController::class)->group(function (){
-        Route::get('trainings/{training}/sessions/{session}/students', 'index')->name('sessions.students');
-        Route::post('trainings/{training}/sessions/{session}/students', 'attachStudent')->name('sessions.students.attach');
-        Route::delete('trainings/{training}/sessions/{session}/students', 'detachStudent')->name('sessions.students.detach');
-        Route::get('trainings/{training}/sessions/{session}/students/{student}/certificate', 'certificate')->name('sessions.students.certificate');
+    Route::controller(StudentController::class)
+        ->prefix('groups/{group}/trainings/{training}/sessions/{session}')
+        ->group(function (){
+            Route::get('students', 'index')->name('sessions.students');
+            Route::post('students', 'attachStudent')->name('sessions.students.attach');
+            Route::delete('students', 'detachStudent')->name('sessions.students.detach');
+            Route::get('students/{student}/certificate', 'certificate')->name('sessions.students.certificate');
     });
 });
 

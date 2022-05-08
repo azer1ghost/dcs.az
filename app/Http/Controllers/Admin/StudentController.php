@@ -4,24 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
+use App\Models\Group;
 use App\Models\Session;
 use App\Models\Student;
 use App\Models\Training;
 
 class StudentController extends Controller
 {
-    public function index(Training $training, Session $session)
+    public function index(Group $group, Training $training, Session $session)
     {
         $session->load('students');
 
         return view('voyager::students.index',[
             'students' => Student::query()->latest('id')->get(),
+            'group' => $group,
             'session' => $session,
             'training' => $training
         ]);
     }
 
-    public function attachStudent(Training $training, Session $session)
+    public function attachStudent(Group $group, Training $training, Session $session)
     {
         $student = Student::query()->findOrFail(request('student_id'))->only('id');
 
@@ -30,7 +32,7 @@ class StudentController extends Controller
         return back()->with('success');
     }
 
-    public function detachStudent(Training $training, Session $session)
+    public function detachStudent(Group $group, Training $training, Session $session)
     {
         $student = Student::query()->findOrFail(request('student_id'));
 
@@ -41,7 +43,7 @@ class StudentController extends Controller
         return back()->with('success');
     }
 
-    public function certificate(Training $training, Session $session, Student $student)
+    public function certificate(Group $group, Training $training, Session $session, Student $student)
     {
         $certificate = Certificate::query()
             ->firstOrCreate(

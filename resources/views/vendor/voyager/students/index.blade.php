@@ -45,7 +45,7 @@
                                     <td>
                                         <a class="btn-link"
                                            target="_blank"
-                                           href="{{route('sessions.students.certificate', ['training' => $training, 'session' => $session, 'student' => $student])}}">
+                                           href="{{route('sessions.students.certificate', [$group, $training, $session, $student])}}">
                                             @if($student->certificates()->whereBelongsTo($training)->whereBelongsTo($session)->doesntExist())
                                                 <button type="button" class="btn btn-warning">Generate Certificate</button>
                                             @else
@@ -75,7 +75,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" id="add.student" action="{{route('sessions.students.attach',  ['training' => $training, 'session' => $session])}}" class="col-12">
+                    <form method="POST" id="add.student" action="{{route('sessions.students.attach',  [$group, $training, $session])}}" class="col-12">
                         @csrf
                         <div class="form-group">
                             <label for="student_id">Select new student</label>
@@ -113,7 +113,7 @@
                     </h4>
                 </div>
                 <div class="modal-footer">
-                    <form action="{{route('sessions.students.detach', ['training' => $training, 'session' => $session])}}" id="delete_form" method="POST">
+                    <form action="{{route('sessions.students.detach', [$group, $training, $session])}}" id="delete_form" method="POST">
                         @csrf @method('DELETE')
                         <input type="hidden" name="student_id">
                         <input type="submit" class="btn btn-danger pull-right delete-confirm" value="{{ __('voyager::generic.delete_confirm') }}">
