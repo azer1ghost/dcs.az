@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SubscriberRequest;
 use App\Http\Requests\UpdateProfile;
+use App\Models\Group;
 use App\Models\Post;
 use App\Models\Service;
 use App\Models\Session;
@@ -24,22 +25,26 @@ class WebsiteController extends Controller
 
     public function trainings()
     {
-        $meta = meta('trainings', ['banner']);
+        $meta = meta('groups', ['banner']);
 
-        $trainings = Training::active()->orderBy('order')->paginate(12);
+        $groups = Group::query()->orderBy('order')->paginate(12);
 
-        return view('website.pages.trainings', compact('trainings', 'meta'));
+        return view('website.pages.groups', compact('groups', 'meta'));
     }
 
-    public function training(Training $training)
+    public function training(Group $group)
     {
-        $training->load(['sessions' => function($q){
-            $q->active();
-        }]);
+        $trainings = Training::query()
+            ->whereBelongsTo($group)
+            ->when(\request()->get('search'), function ($q, $search) {
+                $q->whereTranslation('name', 'LIKE', "%{$search}%");
+            })
+            ->where('status', true)
+            ->paginate(10);
 
-        $meta = meta('trainings', ['banner']);
+        $meta = meta('groups', ['banner']);
 
-        return view('website.pages.training-detail', compact('training', 'meta'));
+        return view('website.pages.group-detail', compact(['group', 'trainings', 'meta']));
     }
 
     public function trainingSubscribe(Training $training, Session $session): RedirectResponse

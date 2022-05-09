@@ -9,7 +9,7 @@ use App\Traits\Translatable;
 /**
  * @method static where(string $string, $page)
  */
-class Statictext extends Model
+class StaticText extends Model
 {
     use Translatable;
 
@@ -20,9 +20,9 @@ class Statictext extends Model
     public static function boot()
     {
         parent::boot();
-        static::saved(function () {
+        static::saved(function (StaticText $staticText) {
             foreach (config('app.locales') as $lang){
-                Cache::forget("static_text_{$this->page}_{$lang}");
+                Cache::forget("static_text_{$staticText->getAttribute('group')}_{$lang}");
             }
         });
     }

@@ -44,17 +44,17 @@ class SessionController extends VoyagerBaseController
 
     public function update(Request $request, $id)
     {
-        $response = parent::update($request, $id);
+        $response = parent::update($request, $request->route('session'));
 
         if ($response)
-            return redirect()->back();
+            return redirect()->route('groups.trainings.sessions.index', [$request->route('group'), $request->route('training')]);
         else
             return $response;
     }
 
     public function destroy(Request $request, $id)
     {
-        $response = parent::destroy($request, $id);
+        $response = parent::destroy($request, $request->route('session'));
 
         if ($response)
             return back();

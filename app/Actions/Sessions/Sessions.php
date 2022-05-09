@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Sessions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
@@ -24,8 +24,8 @@ class Sessions extends AbstractAction
     public function getAttributes(): array
     {
         return [
-            'class' => 'btn btn-sm btn-success pull-right',
-            'style' => 'margin-right: 1px'
+            'class' => 'btn btn-sm btn-success pull-right sessions',
+            'style' => 'margin-right: 5px'
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Trainings;
 
 use TCG\Voyager\Actions\AbstractAction;
 
@@ -11,21 +11,20 @@ class TrainingsEdit extends AbstractAction
         return __('voyager::generic.edit');
     }
 
-    public function getIcon()
+    public function getIcon(): string
     {
         return 'voyager-edit';
     }
 
-    public function getPolicy()
+    public function getPolicy(): string
     {
         return 'edit';
     }
 
-    public function getAttributes()
+    public function getAttributes(): array
     {
         return [
             'class' => 'btn btn-sm btn-primary pull-right edit',
-            'style' => 'margin-right: 5px'
         ];
     }
 

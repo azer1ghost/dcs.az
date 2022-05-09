@@ -28,7 +28,7 @@
                     <!-- form start -->
                     <form role="form"
                             class="form-edit-add"
-                            action="{{ $edit ? route('voyager.sessions.update', $dataTypeContent->getKey()) : route('groups.trainings.sessions.store',  [Request::route('group'), Request::route('training')]) }}"
+                            action="{{ $edit ? route('groups.trainings.sessions.update',  [Request::route('group'), Request::route('training'),  $dataTypeContent->getKey()]) : route('groups.trainings.sessions.store',  [Request::route('group'), Request::route('training')]) }}"
                             method="POST" enctype="multipart/form-data">
                         <!-- PUT Method if we are editing -->
                         @if($edit)

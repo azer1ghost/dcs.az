@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Trainings;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class Students extends AbstractAction
+class Trainings extends AbstractAction
 {
     public function getTitle(): string
     {
-        return 'Students';
+        return 'Trainings';
     }
 
     public function getIcon(): string
     {
-        return 'voyager-people';
+        return 'voyager-study';
     }
 
     public function getPolicy(): string
@@ -24,17 +24,18 @@ class Students extends AbstractAction
     public function getAttributes(): array
     {
         return [
-            'class' => 'btn btn-sm btn-success pull-right'
+            'class' => 'btn btn-sm btn-success pull-right',
+            'style' => 'margin-right: 5px'
         ];
     }
 
     public function getDefaultRoute(): string
     {
-        return route('sessions.students', [request()->route('group'), $this->data->training_id, $this->data]);
+        return route('groups.trainings.index', $this->data);
     }
 
     public function shouldActionDisplayOnDataType(): bool
     {
-        return $this->dataType->slug == 'sessions';
+        return $this->dataType->slug == 'groups';
     }
 }

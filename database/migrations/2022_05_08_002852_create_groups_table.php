@@ -21,6 +21,7 @@ class CreateGroupsTable extends Migration
             $table->text('detail')->nullable();
             $table->integer('order')->default(1);
             $table->boolean('status')->default(true);
+            $table->string('slug')->nullable()->default(null)->unique();
             $table->timestamps();
         });
     }

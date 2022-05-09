@@ -252,7 +252,7 @@
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
                                             @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction') && get_class($action) != "TCG\Voyager\Actions\EditAction")
+                                                @if (!method_exists($action, 'massAction') && !in_array(get_class($action), ["TCG\Voyager\Actions\ViewAction", "TCG\Voyager\Actions\EditAction", "TCG\Voyager\Actions\DeleteAction"]))
                                                     @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach
@@ -354,7 +354,7 @@
 
         var deleteFormAction;
         $('td').on('click', '.delete', function (e) {
-            $('#delete_form')[0].action = '{{ route('voyager.'.$dataType->slug.'.destroy', '__id') }}'.replace('__id', $(this).data('id'));
+            $('#delete_form')[0].action = '{{ route('groups.trainings.destroy', [request()->route('group'), '__id'] ) }}'.replace('__id', $(this).data('id'));
             $('#delete_modal').modal('show');
         });
 

@@ -44,6 +44,13 @@ class Training extends Model
         return $query->order()->where('group_id', request()->route('group'));
     }
 
+    public function highlighted($column, $search): ?string
+    {
+        return $search ?
+            preg_replace('/(' . $search . ')/i', "<b>$1</b>", $this->getTranslatedAttribute($column)):
+            $this->getTranslatedAttribute($column);
+    }
+
     public static function boot()
     {
         parent::boot();

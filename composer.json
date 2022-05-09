@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-pdo": "*",
         "barryvdh/laravel-debugbar": "^3.6",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -15,8 +16,7 @@
         "milon/barcode": "^8.0",
         "setasign/fpdf": "^1.8",
         "setasign/fpdi": "^2.3",
-        "tcg/voyager": "^1.5",
-        "ext-pdo": "*"
+        "tcg/voyager": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

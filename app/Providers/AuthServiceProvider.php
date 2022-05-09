@@ -24,11 +24,11 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Gate::before(function ($user, $ability) {
-            if ($user->hasRole('developer')) {
-                return true;
-            }
-        });
+//        Gate::before(function ($user, $ability) {
+//            if ($user->hasRole('developer')) {
+//                return true;
+//            }
+//        });
 
         $this->loadAuth();
 

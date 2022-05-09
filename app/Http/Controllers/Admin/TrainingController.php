@@ -32,17 +32,17 @@ class TrainingController extends VoyagerBaseController
 
     public function update(Request $request, $id)
     {
-        $response = parent::update($request, $id);
+        $response = parent::update($request, $request->route('training'));
 
         if ($response)
-            return redirect()->route('groups.trainings.index', $request->get('group_id'));
+            return redirect()->route('groups.trainings.index', $request->route('group'));
         else
             return $response;
     }
 
     public function destroy(Request $request, $id)
     {
-        $response = parent::destroy($request, $id);
+        $response = parent::destroy($request, $request->route('training'));
 
         if ($response)
             return back();

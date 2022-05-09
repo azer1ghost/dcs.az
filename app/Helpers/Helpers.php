@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Statictext;
+use App\Models\StaticText;
 use Illuminate\Support\Facades\App;
 
 if (!function_exists('statictext')) {
@@ -10,7 +10,7 @@ if (!function_exists('statictext')) {
         $lang = App::getLocale();
 
         $statics = Cache::remember("static_text_{$page}_{$lang}", config('cache.timeout'), function () use ($page, $lang){
-            return Statictext::where('group', $page)->get()->translate('locale', $lang);
+            return StaticText::where('group', $page)->get()->translate('locale', $lang);
         });
 
         //Create empty array for static texts

@@ -14,11 +14,17 @@ class VoyagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Voyager::addAction(\App\Actions\Trainings::class);
-        Voyager::addAction(\App\Actions\TrainingsEdit::class);
-        Voyager::addAction(\App\Actions\Sessions::class);
-        Voyager::addAction(\App\Actions\SessionsEdit::class);
-        Voyager::addAction(\App\Actions\Students::class);
+        Voyager::addAction(\App\Actions\Trainings\Trainings::class);
+        Voyager::addAction(\App\Actions\Trainings\TrainingsDelete::class);
+        Voyager::addAction(\App\Actions\Trainings\TrainingsEdit::class);
+        Voyager::addAction(\App\Actions\Trainings\TrainingsRead::class);
+
+        Voyager::addAction(\App\Actions\Sessions\Sessions::class);
+        Voyager::addAction(\App\Actions\Sessions\SessionsDelete::class);
+        Voyager::addAction(\App\Actions\Sessions\SessionsEdit::class);
+        Voyager::addAction(\App\Actions\Sessions\SessionsRead::class);
+
+        Voyager::addAction(\App\Actions\Sessions\Students::class);
         Voyager::addAction(\App\Actions\Certificate::class);
         Voyager::addAction(\App\Actions\InfoCertificate::class);
         Voyager::useModel('Translation', \App\Models\Translation::class);

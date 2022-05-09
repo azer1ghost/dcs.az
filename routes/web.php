@@ -34,8 +34,8 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/services', 'services')->name('services');
     Route::get('/articles', 'articles')->name('articles');
     Route::get('/article/{post:slug}', 'article')->name('article');
-    Route::get('/trainings', 'trainings')->name('trainings');
-    Route::get('/trainings/{training:slug}', 'training')->name('training');
+    Route::get('/our-trainings', 'trainings')->name('trainings');
+    Route::get('/our-trainings/{group:slug}', 'training')->name('training');
     Route::get('/certificate/{certificate:slug}', [CertificateController::class, 'index'])->name('certificate');
     Route::post('/subscribe', 'subscribe')->name('subscribe');
     Route::get('/unsubscribe/{email}', 'unsubscribe')->name('unsubscribe');
