@@ -147,7 +147,7 @@ return [
         'widgets' => [
             'App\\Widgets\\StudentDimmer',
             'App\\Widgets\\TrainingDimmer',
-            'App\\Widgets\\CertificateDimmer',
+//            'App\\Widgets\\CertificateDimmer',
         ],
 
     ],
