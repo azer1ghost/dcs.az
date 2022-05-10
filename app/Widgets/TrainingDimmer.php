@@ -22,7 +22,7 @@ class TrainingDimmer extends BaseDimmer
             'text'   => 'Trainings',
             'button' => [
                 'text' => 'Go to trainings',
-                'link' => route('voyager.trainings.index'),
+                'link' => route('voyager.groups.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
         ]);

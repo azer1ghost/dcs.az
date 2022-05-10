@@ -10,7 +10,7 @@
 
     <x-counters/>
 
-{{--    <x-training/>--}}
+    <x-training/>
 
     <x-services/>
 
