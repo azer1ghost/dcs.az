@@ -1,5 +1,5 @@
 <!-- ##### Features Area Start ###### -->
-<section class="features-area py-5" style="background-color: #ffdfa1;">
+<section class="features-area py-5" style="background-color: rgb(139,241,241);">
     <div class="container">
         <div class="row align-content-center">
             <div class="col-lg-4 col-md-4 col-12">
