@@ -23,7 +23,7 @@
 
     @yield('style')
 </head>
-<body>
+<body  style="background-color: #f1f7f9">
 
     @include('website.components.loader')
 

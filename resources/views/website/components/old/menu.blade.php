@@ -49,9 +49,9 @@
 
         @if($item->status)
         <li class="{{ $isActive.$isParent }}">
-            <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}" >
+            <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}">
                 {!! $icon !!}
-                <span class="hover-underline-animation">{{ $item->title }}</span>
+                <span>{{ $item->title }}</span>
             </a>
             @if(!$originalItem->children->isEmpty())
                 @include('website.components.menu', ['items' => $originalItem->children, 'is_Child' => $is_Child ,'options' => $options])
