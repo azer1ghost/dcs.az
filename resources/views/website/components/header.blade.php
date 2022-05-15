@@ -2,14 +2,14 @@
     <div class="classy-nav-container breakpoint-off">
         <div class="container">
             <!-- Menu -->
-            <nav class="classy-navbar justify-content-between" id="creditNav">
+            <nav class="classy-navbar justify-content-between" id="creditNav" style="height: 90px !important;">
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
                 </div>
 
-                <div class="logo p-2 m-1">
+                <div class="logo">
                     <a href="{{route('homepage')}}"><img style="max-width: 120px" src="{{ asset("storage")."/".setting('site.logo') }}" alt="Logo"></a>
                 </div>
 
