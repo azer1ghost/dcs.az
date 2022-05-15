@@ -9,7 +9,7 @@
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
                 </div>
 
-                <div class="logo">
+                <div class="logo p-2 m-1">
                     <a href="{{route('homepage')}}"><img style="max-width: 120px" src="{{ asset("storage")."/".setting('site.logo') }}" alt="Logo"></a>
                 </div>
 
