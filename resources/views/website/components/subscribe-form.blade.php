@@ -7,7 +7,7 @@
                     <h2>{{ statictext('subscribe', 'title') }}</h2>
                     <form id="subscribeForm" action="{{route('subscribe')}}" method="POST">
                         @csrf
-                        <input type="hidden" name="locale" value="{{ app()->getLocale() }}">
+                        <input type="hidden" name="lang" value="{{ app()->getLocale() }}">
                         <input type="hidden" name="token" value="{{ Str::random(32) }}">
                         <input required type="email" name="email" class="@error('email') is-invalid @enderror" placeholder="{{ statictext('global', 'email') }}">
                         @error('email')
