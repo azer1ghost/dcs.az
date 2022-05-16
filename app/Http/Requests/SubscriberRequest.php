@@ -11,7 +11,7 @@ class SubscriberRequest extends FormRequest
         return [
             'email' => 'required|email:rfc,dns|max:50|unique:subscribers,email',
             'token' => 'required|string|min:50|max:50|unique:subscribers,token',
-            'locale' => 'required|in:' . implode(',', config('app.locales')),
+            'lang' => 'required|in:' . implode(',', config('app.locales')),
         ];
     }
 }
