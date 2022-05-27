@@ -107,10 +107,10 @@ class Certificate
         $this->pdf->Text(185, 345, "AUTHORISED BY: S.NABIYEV");
 
         // Socials
-//        $this->pdf->SetFont('Montserrat-Bold', '',10);
-//        $this->pdf->Text(33, 362, setting('site.phone'));
-//        $this->pdf->Text(128, 362, setting('site.email'));
-//        $this->pdf->Text(223, 362, setting('site.adress'));
+        $this->pdf->SetFont('Montserrat-Bold', '',10);
+        $this->pdf->Text(33, 362, setting('site.phone'));
+        $this->pdf->Text(128, 362, setting('site.email'));
+        $this->pdf->Text(223, 362, setting('site.adress'));
 
         // Brands
         // TODO brand are here
