@@ -14,6 +14,11 @@ use TCG\Voyager\Voyager;
 Auth::routes();
 Localization::route();
 
+Route::any('test-notify', function (\Illuminate\Http\Request $request){
+    Notification::route('mail', $email = $request->input('email'))->notify(new \App\Notifications\TestNotify());
+    return response("Notification sent to $email");
+});
+
 Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
 
@@ -48,9 +53,4 @@ Route::controller(WebsiteController::class)->group(function () {
         Route::get('/trainings/{training:slug}/unsubscribe', 'trainingUnsubscribe')->name('trainingUnsubscribe');
     });
     Route::get('/{page:slug}', 'page')->name('page');
-});
-
-Route::any('test-notify', function (\Illuminate\Http\Request $request){
-    Notification::route('mail', $email = $request->input('email'))->notify(new \App\Notifications\TestNotify());
-    return response("Notification sent to $email");
 });
