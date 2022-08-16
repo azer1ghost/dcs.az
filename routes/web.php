@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Middleware\Localization;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Voyager;
 
@@ -48,3 +50,7 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/{page:slug}', 'page')->name('page');
 });
 
+Route::any('test-notify', function (\Illuminate\Http\Request $request){
+    Notification::route('mail', $email = $request->input('email'))->notify(new \App\Notifications\TestNotify());
+    return response("Notification sent to $email");
+});
