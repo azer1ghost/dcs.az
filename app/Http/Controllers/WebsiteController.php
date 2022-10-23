@@ -27,7 +27,10 @@ class WebsiteController extends Controller
     {
         $meta = meta('groups', ['banner']);
 
-        $groups = Group::query()->orderBy('order')->paginate(12);
+        $groups = Group::query()
+            ->where('status', true)
+            ->orderBy('order')
+            ->paginate(12);
 
         return view('website.pages.groups', compact('groups', 'meta'));
     }
@@ -122,5 +125,17 @@ class WebsiteController extends Controller
         );
 
         return back()->with('success');
+    }
+
+    public function contact()
+    {
+        $meta = meta('contact', ['banner']);
+
+        return view('website.pages.contact', compact('meta'));
+    }
+
+    public function send(Request $request)
+    {
+        dd($request->all());
     }
 }

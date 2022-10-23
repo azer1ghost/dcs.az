@@ -31,7 +31,7 @@ class Certificate extends AbstractAction
 
     public function getDefaultRoute(): string
     {
-        return route('sessions.students.certificate', ['training' => $this->data->training_id, 'session' => $this->data->session_id, 'student' => $this->data->student_id]);
+        return route('sessions.students.certificate', ['group' => $this->data->training->group_id, 'training' => $this->data->training_id, 'session' => $this->data->session_id, 'student' => $this->data->student_id]);
     }
 
     public function shouldActionDisplayOnDataType(): bool

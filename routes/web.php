@@ -22,6 +22,7 @@ Route::any('test-notify', function (\Illuminate\Http\Request $request){
 Route::prefix('admin')->withoutMiddleware('localization')->group(function () {
     (new Voyager)->routes();
 
+    Route::get('groups/{group}/trainings/order', [TrainingController::class, 'ordering'])->name('groups.trainings.order');
     Route::resource('groups.trainings', TrainingController::class);
     Route::resource('groups.trainings.sessions', SessionController::class);
 
@@ -44,6 +45,8 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/our-trainings', 'trainings')->name('trainings');
     Route::get('/our-trainings/{group:slug}', 'training')->name('training');
     Route::get('/certificate/{certificate:slug}', [CertificateController::class, 'index'])->name('certificate');
+    Route::get('/contact', 'contact')->name('contact');
+    Route::post('/send', 'send')->name('send');
     Route::post('/subscribe', 'subscribe')->name('subscribe');
     Route::get('/unsubscribe/{email}', 'unsubscribe')->name('unsubscribe');
     Route::middleware( 'auth:student')->group(function () {

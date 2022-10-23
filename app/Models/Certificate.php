@@ -23,6 +23,8 @@ class Certificate extends Model
 
     protected $dates = ['started_at', 'expired_at'];
 
+    protected $with = ['training:id,group_id'];
+
     public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
@@ -112,6 +114,14 @@ class Certificate extends Model
             $last_regnumber++;
 
             $certificate->setAttribute('reg_number', $last_regnumber);
+        });
+
+        static::saved(function (Certificate $model) {
+            Counter::query()
+                ->where('key', Counter::CERTIFICATE)
+                ->update([
+                    'value' => $model::query()->count()
+                ]);
         });
     }
 }

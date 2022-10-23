@@ -106,4 +106,15 @@ class Student extends Authenticatable
     {
         return $this->attributes['surname'] = ucfirst(strtolower($value));
     }
+
+    protected static function booted()
+    {
+        static::saved(function (Student $model) {
+            Counter::query()
+                ->where('key', Counter::STUDENT)
+                ->update([
+                    'value' => $model::query()->count()
+                ]);
+        });
+    }
 }

@@ -112,7 +112,6 @@ return [
         'locales' => [
             'en',
             'az',
-            'ru'
         ],
     ],
 
@@ -145,9 +144,10 @@ return [
         ],
 
         'widgets' => [
-            'App\\Widgets\\StudentDimmer',
-            'App\\Widgets\\TrainingDimmer',
-//            'App\\Widgets\\CertificateDimmer',
+            \App\Widgets\StudentDimmer::class,
+            \App\Widgets\TrainingDimmer::class,
+            \App\Widgets\CertificateDimmer::class,
+            \App\Widgets\CompanyDimmer::class
         ],
 
     ],

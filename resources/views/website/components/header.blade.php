@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                 @else
-                                    <a class="mr-2" href="{{route('login')}}"><i class="far fa-user mr-1"></i> {{statictext('global','login')}}</a>
+                                    <a class="mr-2" href="{{route('login')}}">{{statictext('global','login')}}</a>
                                 @endauth
                             @endif
                             <div class="dropdown">

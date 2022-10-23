@@ -39,9 +39,12 @@ class Training extends Model
         return $this->belongsTo(Group::class)->withDefault();
     }
 
-    public function scopeByGroupId($query)
+    public function scopeByGroupId($query): Builder
     {
-        return $query->order()->where('group_id', request()->route('group'));
+        if (request()->route('group')) {
+            return $query->order()->where('group_id', request()->route('group'));
+        }
+        return $query->order();
     }
 
     public function highlighted($column, $search): ?string
@@ -54,8 +57,12 @@ class Training extends Model
     public static function boot()
     {
         parent::boot();
-        static::saved(function () {
-            Cache::forget('component_trainings');
+        static::saved(function (Training $model) {
+            Counter::query()
+                ->where('key', Counter::TRAINING)
+                ->update([
+                    'value' => $model::query()->count()
+                ]);
         });
     }
 }

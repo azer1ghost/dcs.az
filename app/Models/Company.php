@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -34,5 +35,16 @@ class Company extends Authenticatable
     public function certificates(): HasManyThrough
     {
         return $this->hasManyThrough(Certificate::class,Student::class);
+    }
+
+    protected static function booted()
+    {
+        static::saved(function (Company $model) {
+            Counter::query()
+                ->where('key', Counter::COMPANY)
+                ->update([
+                    'value' => $model::query()->count()
+                ]);
+        });
     }
 }

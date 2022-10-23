@@ -74,6 +74,12 @@
                                     @if (isset($row->details->view))
                                         @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add'), 'view' => ($edit ? 'edit' : 'add'), 'options' => $row->details])
                                     @elseif ($row->type == 'relationship')
+                                        @php
+                                            if (is_null($dataTypeContent->{$row->details->column})) {
+                                                $dataTypeContent->{$row->details->column} = request()->route('group');
+                                            }
+                                        @endphp
+
                                         @include('voyager::formfields.relationship', ['options' => $row->details])
                                     @else
                                         {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
@@ -91,8 +97,6 @@
                             @endforeach
 
                         </div><!-- panel-body -->
-
-                        <input type="hidden" name="group_id" value="{{request()->route('group')}}">
 
                         <div class="panel-footer">
                             @section('submit-buttons')

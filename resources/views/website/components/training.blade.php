@@ -20,7 +20,7 @@
                @foreach($trainings as $training)
                    <div class="col-lg-4 col-12 mt-md-3 mt-5">
                        <div class="single-features-area wow fadeInUp" data-wow-delay="300ms">
-                           <a href="{{route('training', $training)}}">
+                           <a href="{{route('training', $training->group->slug)}}">
                                <img style="height: 200px; width: 100%" alt="{{$training->getTranslatedAttribute('name')}}" src="{{image($training->image)}}">
                                <h5>{{$training->getTranslatedAttribute('name')}}</h5>
                            </a>

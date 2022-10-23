@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use Cache;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
@@ -12,9 +11,13 @@ class Training extends Component
 
     public function __construct()
     {
-        $this->trainings = Cache::remember("component_trainings", config('cache.timeout'), function (){
-            return \App\Models\Training::query()->orderBy('order')->limit(3)->active()->get();
-        });
+        $this->trainings = \App\Models\Training::query()
+            ->with('group:id,slug')
+            ->inRandomOrder()
+            ->orderBy('order')
+            ->limit(3)
+            ->active()
+            ->get();
     }
 
     public function render()
