@@ -10,9 +10,12 @@ use App\Models\Service;
 use App\Models\Session;
 use App\Models\Subscriber;
 use App\Models\Training;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Notification;
+use function GuzzleHttp\Promise\all;
 
 class WebsiteController extends Controller
 {
@@ -136,6 +139,20 @@ class WebsiteController extends Controller
 
     public function send(Request $request)
     {
-        dd($request->all());
+        $validated = $request->validate([
+            'email' => 'required|email|max:100',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+
+        $users = User::query()
+            ->whereHas('role', function ($q){
+                $q->whereIn('name', ['developer', 'admin']);
+            })
+            ->get();
+
+        Notification::send($users, new \App\Notifications\ContactForm($validated));
+
+        return back()->with('success');
     }
 }
