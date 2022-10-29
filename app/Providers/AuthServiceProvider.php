@@ -6,6 +6,7 @@ use Gate;
 use App\Models\DataType;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Log;
+use TCG\Voyager\Models\Setting;
 use TCG\Voyager\Policies\BasePolicy;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,11 +25,13 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Gate::before(function ($user, $ability) {
-//            if ($user->hasRole('developer')) {
-//                return true;
-//            }
-//        });
+        Gate::before(function ($user, $ability) {
+            if ($user->hasRole('developer')) {
+                return true;
+            } else {
+                return false;
+            }
+        });
 
         $this->loadAuth();
 
@@ -37,6 +40,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function loadAuth()
     {
+
         try {
             $dataType = DataType::query();
             $dataTypes = $dataType->select('policy_name', 'model_name')->get();

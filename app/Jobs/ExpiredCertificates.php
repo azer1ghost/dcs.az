@@ -23,6 +23,8 @@ class ExpiredCertificates
      */
     public function handle()
     {
+        logger('ExpiredCertificates Job Running', ['class' => self::class]);
+
         $companies = Company::query()
             ->withCount(['certificates' => fn($q) => $q->expiredIn(7)])
             ->whereHas('certificates', fn($q) => $q->expiredIn(7))

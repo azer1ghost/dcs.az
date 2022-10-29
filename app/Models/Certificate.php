@@ -47,7 +47,7 @@ class Certificate extends Model
 
     public function getIsExpiredInWeekAttribute(): bool
     {
-        return $this->getAttribute('expired_at')->diff(now())->d < 7;
+        return $this->getAttribute('expired_at') < now()->addWeek();
     }
 
     public function scopeExpiredIn($query, $days = 7)
